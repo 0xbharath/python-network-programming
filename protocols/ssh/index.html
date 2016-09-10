@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Bharath(yamakira_)">
+  
+  <title>SSH - Python Network programming</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SSH";
+    var mkdocs_page_input_path = "protocols/ssh.md";
+    var mkdocs_page_url = "/protocols/ssh/index.html";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> Python Network programming</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Network Programming in Python</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../index.html">Course overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/license/index.html">License & Attributions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/bigger_picture/index.html">Bigger picture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/speakers/index.html">Speakers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/workshop_settings/index.html">Workshop settings</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Networking</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layers/index.html">Layers</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Socket Interface</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../socket_interface/index.html">Socket interface</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Protocols</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dns/index.html">DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../telnet/index.html">Telnet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">SSH</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#ssh-the-secure-shell">SSH: The Secure Shell</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-ssh">What is SSH?</a></li>
+                
+                    <li><a class="toctree-l4" href="#ssh-overview">SSH Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#ssh-connection">SSH connection</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Misc Networking libraries</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../libraries/netaddr/index.html">netaddr</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Exercises</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../exercises/exercises/index.html">Basic exercises</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../exercises/logpuzzle/index.html">Log puzzle</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Epilogue</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../feedback/index.html">Feedback & Credits</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python Network programming</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Protocols &raquo;</li>
+        
+      
+    
+    <li>SSH</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ssh-the-secure-shell">SSH: The Secure Shell</h1>
+<table>
+<thead>
+<tr>
+<th>SSH protocol</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Secure remote shell, file transfer, port forwarding</td>
+</tr>
+<tr>
+<td><strong>Standard</strong></td>
+<td>RFC 4250–4256</td>
+</tr>
+<tr>
+<td><strong>Runs atop</strong></td>
+<td>TCP/IP</td>
+</tr>
+<tr>
+<td><strong>Port number</strong></td>
+<td>22</td>
+</tr>
+<tr>
+<td><strong>Libraries</strong></td>
+<td>pexpect, pxssh, <strong>paramiko</strong></td>
+</tr>
+<tr>
+<td><strong>Exceptions</strong></td>
+<td>socket.error, socket.gaierror, paramiko.SSHException</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-is-ssh">What is SSH?</h2>
+<ul>
+<li>SSH protocol is one of the best-known examples of a secure, encrypted protocol.</li>
+<li>SSH is descended from the &lsquo;r&rsquo;-family of protocols(rlogin, rsh, and rcp).</li>
+<li>SSH preserved all the great features of the early remote-shell protocol added wit hsecurity, encryption and efficient multiplexing.</li>
+</ul>
+<h2 id="ssh-overview">SSH Overview</h2>
+<h3 id="multiplexing">Multiplexing</h3>
+<p>[what is protocol multiplexing]</p>
+<p>For example, UDP and TCP use the concept of port numbers, let&rsquo;s several different applications run on a machine over single IP. IP protocol has no clue about the many applications running at transport layer.</p>
+<p>A lot of high level protocols tend to ignore the concept of multiplexing. For example, it is not possible to multiplex using the most popular application layer protocol, HTTP 1.1.</p>
+<p>SSH is a sophisticated protocol that implements its own multiplexing. SSH has a notion of &lsquo;channels&rsquo;, mutliple channels can run on same SSH socket. Every block of information SSH sends across its socket is labeled with a “channel” identifier so that several conversations can share the socket.</p>
+<p>Multiplexing make sense because the real expense of an SSH connection is setting it up. It&rsquo;s takes a few second of real time to setup an SSH connection. So using an SSH connection for as many operations justifies the high intitial expense of setting it up.</p>
+<p>Once connected on SSH, you can create several kinds of channels: <br/></p>
+<ul>
+<li>An interactive shell session, like that supported by Telnet.</li>
+<li>An interactive shell session, like that supported by Telnet.</li>
+<li>The individual execution of a single command.</li>
+<li>A file transfer session letting you browse the remote filesystem.</li>
+<li>A port forward that intercepts TCP connections.</li>
+</ul>
+<h2 id="ssh-connection">SSH connection</h2>
+<p>Before automating SSH connections, we&rsquo;ll take a brief look at how SSH conections are established. We&rsquo;ll not delve into SSH protocol internals, we&rsquo;ll only look at the connection flow.</p>
+<h3 id="ssh-host-keys">SSH Host keys</h3>
+<ul>
+<li>
+<p>When an SSH client first connects to a remote host, the two exchange temporary public keys that let them encrypt the rest of their conversation without revealing any information to any watching third parties.</p>
+</li>
+<li>
+<p>Then, before the client is willing to divulge any further information, it demands proof of the remote server’s identity. This is to make sure that you don&rsquo;t reveal username or password an attacker who got hold of server&rsquo;s address.</p>
+</li>
+</ul>
+<h3 id="server-identity">Server identity</h3>
+<ul>
+<li>
+<p>One way to deal with identifying machines on the Internet is to deploy your own Public Key Infrastructure(PKI) but using public-key infrastructure would be quite a cumbersome process for something like SSH.</p>
+</li>
+<li>
+<p>An SSH server, when installed, creates its own random public-private key pair that is not signed by anybody. Key distribution can happen on of the two following ways: </p>
+<ul>
+<li>A system admin writes a <strong>script that gathers up all the host public keys in an organization</strong>, creates an <em>ssh_known_hosts</em> listing them all, and places this file in the /etc/sshd directory on every system in the organization. Once this done, every SSH client will know about every SSH host key before they even connect for the first time.</li>
+<li>Another approach is that, rather than knowing the host keys before hand, SSH clients will <strong>save host keys at the moment of first connection</strong>. You actually have no guarantee on this first encounter that you are really talking to the host you think it is. Nevertheless, at least you will be guaranteed that every subsequent connection you ever make to that machine is going to the right place.</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../libraries/netaddr/index.html" class="btn btn-neutral float-right" title="netaddr">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../telnet/index.html" class="btn btn-neutral" title="Telnet"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../telnet/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../libraries/netaddr/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

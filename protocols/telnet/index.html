@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Bharath(yamakira_)">
+  
+  <title>Telnet - Python Network programming</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Telnet";
+    var mkdocs_page_input_path = "protocols/telnet.md";
+    var mkdocs_page_url = "/protocols/telnet/index.html";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> Python Network programming</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Network Programming in Python</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../index.html">Course overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/license/index.html">License & Attributions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/bigger_picture/index.html">Bigger picture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/speakers/index.html">Speakers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/workshop_settings/index.html">Workshop settings</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Networking</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layers/index.html">Layers</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Socket Interface</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../socket_interface/index.html">Socket interface</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Protocols</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dns/index.html">DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">Telnet</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#telnet">Telnet</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-telnet">What is telnet?</a></li>
+                
+                    <li><a class="toctree-l4" href="#scripting-telnet">Scripting Telnet</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ssh/index.html">SSH</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Misc Networking libraries</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../libraries/netaddr/index.html">netaddr</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Exercises</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../exercises/exercises/index.html">Basic exercises</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../exercises/logpuzzle/index.html">Log puzzle</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Epilogue</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../feedback/index.html">Feedback & Credits</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python Network programming</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Protocols &raquo;</li>
+        
+      
+    
+    <li>Telnet</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="telnet">Telnet</h1>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Telnet Protocol</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Remote shell access.</td>
+</tr>
+<tr>
+<td><strong>Standard</strong></td>
+<td>RFC 854</td>
+</tr>
+<tr>
+<td><strong>Runs atop</strong></td>
+<td>TCP/IP</td>
+</tr>
+<tr>
+<td><strong>Port number</strong></td>
+<td>23</td>
+</tr>
+<tr>
+<td><strong>Libraries</strong></td>
+<td>pexpect, <strong>telnetlib</strong></td>
+</tr>
+<tr>
+<td><strong>Exceptions</strong></td>
+<td>socket.error, socket.gaierror, EOFError, select.error</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="what-is-telnet">What is telnet?</h2>
+<p>&ldquo;Telnet is an application layer protocol used on the Internet or local area networks to provide a bidirectional interactive text-oriented communication facility using a virtual terminal connection.&rdquo;</p>
+<h4 id="why-not-to-use-telnet">Why NOT to use telnet?</h4>
+<ul>
+<li>Telnet is a <strong>terribly insecure protocol</strong>. It&rsquo;s a plain-text protocol, anyone watching your Telnet packets on the wire will see your username, password, and everything you do on the remote system.</li>
+<li>A lot of  Telnet have no authentication that would ensure communication is carried out between the two desired hosts and not intercepted in the middle.</li>
+<li>Several critical vulnerabilities have been discovered over the years in commonly used Telnet daemons.</li>
+<li>Telnet is inefficient when it comes to anything other than remote shell access, like file transfer, authentication management etc.</li>
+<li>For the above reasons Telnet is largely replaced by SSH and &lsquo;r&rsquo;-family of protocols(rlogin, rsh, and rcp).</li>
+</ul>
+<h4 id="why-telnet">Why telnet?</h4>
+<ul>
+<li>Telnet is fairly prevalent in networking devices(routers/modems) that sit deep inside a well-firewalled corporate network.</li>
+<li>Telnet is still a popular way to access remote shell in many embedded(IoT) devices.</li>
+</ul>
+<div class="admonition important">
+<p>A study on state of telnet in embedded systems - <a href='https://en.blog.nic.cz/2016/09/01/telnet-is-not-dead-at-least-not-on-smart-devices/'>Telnet is not dead </a><br></p>
+</div>
+<h2 id="scripting-telnet">Scripting Telnet</h2>
+<ul>
+<li>Telnet is an interactive protocol that provides a virtual terminal for interaction. We&rsquo;ll try to automate the interaction part using python scripting.</li>
+<li>Telnet is so hard to script because it&rsquo;s lacks serious standardization with regards to username and password prompts, error messages or responses. One script     might not fit all the telnet implementations.</li>
+<li>Scripting Telnet is like playing a purely textual game. You recieve some text and based on it you reply with something intelligible to the server.</li>
+</ul>
+<h3 id="expect">expect</h3>
+<p>[explain expect]
+[one sample]</p>
+<h3 id="pexpect">pexpect</h3>
+<ul>
+<li>pexpect is pure Python implementation of expect.</li>
+<li>Like expect pexpect is technically not a network aware program, but it can be used to automate interactive programs like Telnet and SSH.</li>
+</ul>
+<p>[pexpect docs link]
+[pexpect telnet script]</p>
+<h3 id="telnetlib">telnetlib</h3>
+<ul>
+<li>telnetlib is similar to <em>pexpect</em> but crafted for automating Telnet protocol.</li>
+<li>telnetlib not only has basic methods for sending and receiving data but also a few routines that will watch and wait for a particular string to arrive from the remote system.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ssh/index.html" class="btn btn-neutral float-right" title="SSH">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../dns/index.html" class="btn btn-neutral" title="DNS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../dns/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ssh/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+{
+    "docs": [
+        {
+            "location": "/index.html", 
+            "text": "Workshop overview\n\n\n\n\nThis workshop explores network programming in the Python language.\n\n\nWe\nll explore networking concepts, protocols and translate these into practical network programming.\n\n\nWe\nll cover basic concepts, modules \n third-party libraries in Python to communicate over networks.\n\n\nWe\nll take a bottom-up approach i.e. starting from socket API up until using high level libraries like Requests.\n\n\nDifference between Python2.x \n Python3.x with regards to network code.\n\n\n\n\nConcepts covered\n\n\n\n\nScripts to communicate over HTTP, DNS, SSH, Telnet, FTP and SFTP.\n\n\nWriting simple web scrapers.\n\n\nAutomating various system administration tasks.(Managing SSH sessions, Querying web services)\n\n\nManaging Network data and handling network errors.\n\n\n\n\nSkill prerequisites\n\n\n\n\nBasics of Python programming. (strings, lists, dicts, functions, files etc)\n\n\nKnowledge of basic networking concepts. (Enough to know what an IP address, port number, OSI model etc.)\n\n\n\n\nTechnical prerequisites\n\n\n\n\nLaptop with administrator access (mandatory).\n\n\nMinimum 2 GB RAM and 15 GB free hard disk space (More the better).\n\n\nPreferably running Linux as primary OS but Windows/Mac is permissible.\n\n\nPreferably, your own Internet connectivity.\n\n\n\n\nLibraries/Modules\n\n\n\n\nStandard library\n\n\nurllib, urllib2, pexpect, telnetlib, ftplib, sys, os, getpass.\n\n\n\n\n\n\nThird party modules\n\n\nrequests, paramiko, pxssh, netaddr, netifaces, dnspython", 
+            "title": "Course overview"
+        }, 
+        {
+            "location": "/index.html#workshop-overview", 
+            "text": "This workshop explores network programming in the Python language.  We ll explore networking concepts, protocols and translate these into practical network programming.  We ll cover basic concepts, modules   third-party libraries in Python to communicate over networks.  We ll take a bottom-up approach i.e. starting from socket API up until using high level libraries like Requests.  Difference between Python2.x   Python3.x with regards to network code.", 
+            "title": "Workshop overview"
+        }, 
+        {
+            "location": "/index.html#concepts-covered", 
+            "text": "Scripts to communicate over HTTP, DNS, SSH, Telnet, FTP and SFTP.  Writing simple web scrapers.  Automating various system administration tasks.(Managing SSH sessions, Querying web services)  Managing Network data and handling network errors.", 
+            "title": "Concepts covered"
+        }, 
+        {
+            "location": "/index.html#skill-prerequisites", 
+            "text": "Basics of Python programming. (strings, lists, dicts, functions, files etc)  Knowledge of basic networking concepts. (Enough to know what an IP address, port number, OSI model etc.)", 
+            "title": "Skill prerequisites"
+        }, 
+        {
+            "location": "/index.html#technical-prerequisites", 
+            "text": "Laptop with administrator access (mandatory).  Minimum 2 GB RAM and 15 GB free hard disk space (More the better).  Preferably running Linux as primary OS but Windows/Mac is permissible.  Preferably, your own Internet connectivity.", 
+            "title": "Technical prerequisites"
+        }, 
+        {
+            "location": "/index.html#librariesmodules", 
+            "text": "Standard library  urllib, urllib2, pexpect, telnetlib, ftplib, sys, os, getpass.    Third party modules  requests, paramiko, pxssh, netaddr, netifaces, dnspython", 
+            "title": "Libraries/Modules"
+        }, 
+        {
+            "location": "/workshop_intro/license/index.html", 
+            "text": "Copyright (C) 2016  Bharath Kumar \n Abhinav Chourasia\n \n\nExcept as otherwise noted, the content of this workshop is licensed under the \nCreative Commons Attribution-Share Alike 4.0 International License\n , and code samples are licensed under the \nApache 2.0 License\n.\n\n\nPortions of this workshop are reproduced/modified based on work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License \nhttps://developers.google.com/edu/python/\n.\n\n\nAll the illustrations on Domain Name System(DNS) are reproduced based on work created and shared by Steve Friedl at \nUnixwiz.net\n.", 
+            "title": "License & Attributions"
+        }, 
+        {
+            "location": "/workshop_intro/bigger_picture/index.html", 
+            "text": "", 
+            "title": "Bigger picture"
+        }, 
+        {
+            "location": "/workshop_intro/speakers/index.html", 
+            "text": "Bharath\n\n\nWebpage \n \n  \n  \ndisruptivelabs.in\n\nTwitter\n \n  \n \n  \n  \n   \ntwitter.com/yamakira_\n\nGithub \n \n  \ngithub.com/yamakira\n \n\n\nAbhinav\n\n\nWebpage \n \n  \n  \n\nTwitter\n \n  \n \n  \n  \n   \ntwitter.com/geek_ji\n\nGithub", 
+            "title": "Speakers"
+        }, 
+        {
+            "location": "/workshop_intro/speakers/index.html#bharath", 
+            "text": "Webpage          disruptivelabs.in \nTwitter                  twitter.com/yamakira_ \nGithub       github.com/yamakira", 
+            "title": "Bharath"
+        }, 
+        {
+            "location": "/workshop_intro/speakers/index.html#abhinav", 
+            "text": "Webpage          \nTwitter                  twitter.com/geek_ji \nGithub", 
+            "title": "Abhinav"
+        }, 
+        {
+            "location": "/workshop_intro/workshop_settings/index.html", 
+            "text": "The Goal\n\n\n\n\nUnderstand basic networking concepts and network programming in Python.\n\n\nEnable you with skills to explore other pythonic stuff on your own.\n\n\nHave fun while programming!\n\n\n\n\nIf you have questions\n\n\n\n\nRTFM\n\n\nAsk them when you got them.\n\n\nIt\ns easy to get lost so \ntry not to be on auto pilot mode\n.\n\n\nTry it before you ask!\n\n\nslack channel\n for offline support.\n\n\n\n\nScope\n\n\n\n\nMile deep \n meter wide!\n\n\nMix of theory \n exercises.\n\n\nAdmin/Security auditing approach.\n\n\nPython 2.7.x\n\n\n\n\nFor more on Python 2.x vs 3.x \nPython 2.x vs 3.x", 
+            "title": "Workshop settings"
+        }, 
+        {
+            "location": "/workshop_intro/workshop_settings/index.html#the-goal", 
+            "text": "Understand basic networking concepts and network programming in Python.  Enable you with skills to explore other pythonic stuff on your own.  Have fun while programming!", 
+            "title": "The Goal"
+        }, 
+        {
+            "location": "/workshop_intro/workshop_settings/index.html#if-you-have-questions", 
+            "text": "RTFM  Ask them when you got them.  It s easy to get lost so  try not to be on auto pilot mode .  Try it before you ask!  slack channel  for offline support.", 
+            "title": "If you have questions"
+        }, 
+        {
+            "location": "/workshop_intro/workshop_settings/index.html#scope", 
+            "text": "Mile deep   meter wide!  Mix of theory   exercises.  Admin/Security auditing approach.  Python 2.7.x   For more on Python 2.x vs 3.x  Python 2.x vs 3.x", 
+            "title": "Scope"
+        }, 
+        {
+            "location": "/layers/index.html", 
+            "text": "OSI model", 
+            "title": "Layers"
+        }, 
+        {
+            "location": "/layers/index.html#osi-model", 
+            "text": "", 
+            "title": "OSI model"
+        }, 
+        {
+            "location": "/socket_interface/index.html", 
+            "text": "Socket Interface\n\n\n\n\n\n\n\n\n\n\n\n\n        \n 2016 Bharath", 
+            "title": "Socket interface"
+        }, 
+        {
+            "location": "/socket_interface/index.html#socket-interface", 
+            "text": "2016 Bharath", 
+            "title": "Socket Interface"
+        }, 
+        {
+            "location": "/protocols/dns/index.html", 
+            "text": "Domain Name System\n\n\n\n\n\n\n\n\n\n\nDNS Protocol\n\n\n\n\n\n\n\n\n\n\n\n\nPurpose\n\n\nResolve hostnames by returning IP addresses\n\n\n\n\n\n\nStandard\n\n\nRFC 1034 and RFC 1035\n\n\n\n\n\n\nRuns atop\n\n\nUDP/IP and TCP/IP\n\n\n\n\n\n\nPort number\n\n\n53\n\n\n\n\n\n\nLibraries\n\n\ndnspython\n  (\ndnspython3\n for python 3.x)\n\n\n\n\n\n\n\n\n\n\nWhat is DNS?\n\n\nThe Domain Name System, or DNS, is one of the Internet\ns fundamental building blocks. It is the \nglobal, hierarchical, and distributed host information database\n that\ns responsible for translating names into addresses and vice versa, routing mail to its proper destination, and many other services.\n \n\n- \nBind9.net\n\n\n\n\nThe Domain Name System (DNS) is the scheme by which millions of Internet hosts cooperate to answer the question\nof what hostnames resolve to which IP addresses. \n\n\nThe DNS is the mechanism which translates names like \niana.org\n into IPv4 addresses like 192.0.43.8, or 2001:500:88:200::8 if you are already enjoying IPv6.\n\n\n\n\n\n\n\n\n\n\n\nDNS - Terminology\n\n\nBefore we see how DNS operates, we need to be aware of the terminology used in DNS, atleast software wise.\n\n\nResolver\n\n\n\n\nResolver is the \nclient part of the DNS client/server system\n: it asks the questions about hostnames. The resolver is usually a small library compiled into each program that requires DNS services, and it knows just enough to send questions to a nearby nameserver. \n\n\nResolvers are usually very small and dumb, relying on the servers to do the heavy lifting.\n\n\n\n\nRecursive Nameserver\n\n\n\n\nThis is a \nnameserver that\ns willing to go out on the internet and find the results\n for zones it\ns not authoritative for, as a service to its clients. Not all nameservers are configured to provide recursive service, or are limited to just trusted clients (say, an ISP may provide nameservice only to its customers).\n\n\nThe \nraw IP addresses\n of recursive servers are specifieds on the client, either manually or by using DHCP.\n\n\nUsually an ISP provides recursive DNS server address but if people are unhappy with their ISP\u2019s DNS behavior/performance, they can configure to use third party servers, like the servers at 8.8.8.8 and 8.8.4.4 run by Google.\n\n\n\n\nNameserver\n\n\n\n\nThis is \nserver software that answers DNS questions\n.\n\n\nSometimes a nameserver knows the answer directly (if it\ns \nauthoritative\n for the zone), other times it has to go out to the internet and ask around to find the answer (if it\ns a \nrecursive\n nameserver). \n\n\nThere is wide variety of software that performs this service: \nBIND, PowerDNS\n etc.\n\n\n\n\nAuthoritative Nameserver\n\n\n\n\nFor every zone, somebody has to maintain a file of the hostnames and IP address associations. This is generally an administrative function performed by a human, and in most cases one machine has this file. It\ns the zone master. \n\n\nZones with multiple public nameservers make administrative arrangements to transfer the zone data automatically to additional slave nameservers, all of which are authoritative as far as the outside world is concerned. The distinction between master and slave is unimportant for this paper. \n\n\n\n\nResource Record\n\n\n\n\nThough most think of DNS as providing hostname-to-IP mapping, there are actually other kinds of questions we can ask of a nameserver, and this highlights the notion that DNS is really a database of \nresource records\n. \n\n\nThe most common type is an IP Address (an \nA\n record), but other records exist too: NS (nameserver), MX (mail exchanger), SOA (Start of Authority), and so on. \n\n\n\n\n\n\n\n\n\n\nRecord type\n\n\nPurpose\n\n\n\n\n\n\n\n\n\n\nA\n\n\nIP Address record. Using a hostname to get an IPv4 adress.\n\n\n\n\n\n\nAAAA\n\n\nIP Address record. Using a hostname to get an IPv6 adress.\n\n\n\n\n\n\nPTR\n\n\nreverse DNS lookup. Using IP address to get hostname.\n\n\n\n\n\n\nNS\n\n\nNameserver record responsible for the domain asked about.\n\n\n\n\n\n\nMX\n\n\nMail Exchanger record. server responsible for handling email for the given domain.\n\n\n\n\n\n\nSOA\n\n\nStart of Authorities record describes some key data about the zone as defined by the zone administrator.\n\n\n\n\n\n\nCNAME\n\n\nCanonical Name or Alias, this allows providing an alternate name for a resource.\n\n\n\n\n\n\nTXT\n\n\nA generic Text record that provides descriptive data about domain.\n\n\n\n\n\n\n\n\nzone\n\n\n\n\nThink of this as a \ndomain\n: a collection of hostnames/IP pairs all managed together. \n\n\nSubdomains are sometimes part of the main zone, sometimes they are a separate zone.\n\n\n\n\nDNS - Query flow\n\n\n\n\nStep I\n\n\n\n\nYour OS tries to resolve the address locally(using /etc/hosts on linux, looking in local cache etc). If the answer is not available locally then a request is made to the recursive server.\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep II\n\n\n\n\nYour recursive server checks it\ns cache, if it doesn\nt find the record then the recursive server makes a request on your behalf to any one of the 13 root servers.\n\n\n\n\n\n\n\n\n\n\n\n\n\nStep III\n\n\nThe root server doesn\nt know the answer to your request, but it sends a referral to youe revursive name server with a list of the Global Top Level Domain (GTLD) servers responsible for the a domain(.com, .net, .org etc). This is in the form of NS records of servers more qualified to answer our query.\n\n\n\n\n\n\n\n\n\n\n\nStep IV\n\n\n\n\nUsing the referral from the root servers, your recursive nameserver chooses one of the authoritative servers at random and sends off the same query.\n\n\nThe GTLD server doesn\nt know the specific answer to our query, but it does know how to get us closer. Like the root servers, it sends back a referral (a set of NS records) that are likely to have what we seek. \n\n\n\n\n\n\n\n\n\n\n\n\n\nStep V\n\n\n\n\nThis time the recursive nameserver, following a chain of referrals on the client\ns behalf, and it picks one of the nameservers at random and sends off a third query (the same as the other two). \n\n\n\n\n\n\n\n\n\n\n\n\n\nStep VI\n\n\n\n\nNow with answer in hand, the ISP\ns recursive nameserver hands that answer back to the client, and that satisfies the entire query.\n\n\nThe recursive nameserver also files away this answer into its own cache in case this or some other client makes the same query later. \n\n\n\n\n\n\n\n\n\n\n\n\n\ndnspython library\n\n\n\n\ndnspython is a DNS toolkit for Python. It supports almost all record types. It can be used for queries, zone transfers, and dynamic updates.\n\n\n\ndnspython provides both high and low level access to DNS. The high level classes perform queries for data of a given name, type, and class, and return an answer set. The low level classes allow direct manipulation of DNS zones, messages, names, and records.\n\n\n\n\nInstallation\n\n\nYou can install dnspython using PIP.\n\n\n$ pip install dnspython\n\n\n\n\nBasic DNS queries\n\n\n#!/usr/bin/env python\n# Basic DNS query\n\nimport argparse, dns.resolver\n\ndef lookup(name):\n    for qtype in 'A', 'AAAA', 'CNAME', 'MX', 'NS':\n        answer = dns.resolver.query(name, qtype, raise_on_no_answer=False)\n        if answer.rrset is not None:\n            print(answer.rrset)\n\nif __name__ == '__main__':\n    parser = argparse.ArgumentParser(description='Resolve a name using DNS')\n    parser.add_argument('name', help='name that you want to look up in DNS')\n    lookup(parser.parse_args().name)\n\n\n\n\nZone transfer\n\n\nimport dns.query\nimport dns.zone\n\nz = dns.zone.from_xfr(dns.query.xfr('nsztm1.digi.ninja', 'zonetransfer.me'))\nnames = z.nodes.keys()\nnames.sort()\nfor n in names:\n    print z[n].to_text(n)\n\n\n\n\nEASTER EGG in google dns\n\n\nHow do we get TXT, CNAME and SOA records from dnspython? stackoverflow\n\n\n\n \n\u00a9 Copyright, all the DNS query illustrations on this page are made by and belong to Steve Friedl of Unixwiz.net", 
+            "title": "DNS"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#domain-name-system", 
+            "text": "DNS Protocol       Purpose  Resolve hostnames by returning IP addresses    Standard  RFC 1034 and RFC 1035    Runs atop  UDP/IP and TCP/IP    Port number  53    Libraries  dnspython   ( dnspython3  for python 3.x)", 
+            "title": "Domain Name System"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#what-is-dns", 
+            "text": "The Domain Name System, or DNS, is one of the Internet s fundamental building blocks. It is the  global, hierarchical, and distributed host information database  that s responsible for translating names into addresses and vice versa, routing mail to its proper destination, and many other services.   \n-  Bind9.net   The Domain Name System (DNS) is the scheme by which millions of Internet hosts cooperate to answer the question\nof what hostnames resolve to which IP addresses.   The DNS is the mechanism which translates names like  iana.org  into IPv4 addresses like 192.0.43.8, or 2001:500:88:200::8 if you are already enjoying IPv6.", 
+            "title": "What is DNS?"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#dns-terminology", 
+            "text": "Before we see how DNS operates, we need to be aware of the terminology used in DNS, atleast software wise.", 
+            "title": "DNS - Terminology"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#resolver", 
+            "text": "Resolver is the  client part of the DNS client/server system : it asks the questions about hostnames. The resolver is usually a small library compiled into each program that requires DNS services, and it knows just enough to send questions to a nearby nameserver.   Resolvers are usually very small and dumb, relying on the servers to do the heavy lifting.", 
+            "title": "Resolver"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#recursive-nameserver", 
+            "text": "This is a  nameserver that s willing to go out on the internet and find the results  for zones it s not authoritative for, as a service to its clients. Not all nameservers are configured to provide recursive service, or are limited to just trusted clients (say, an ISP may provide nameservice only to its customers).  The  raw IP addresses  of recursive servers are specifieds on the client, either manually or by using DHCP.  Usually an ISP provides recursive DNS server address but if people are unhappy with their ISP\u2019s DNS behavior/performance, they can configure to use third party servers, like the servers at 8.8.8.8 and 8.8.4.4 run by Google.", 
+            "title": "Recursive Nameserver"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#nameserver", 
+            "text": "This is  server software that answers DNS questions .  Sometimes a nameserver knows the answer directly (if it s  authoritative  for the zone), other times it has to go out to the internet and ask around to find the answer (if it s a  recursive  nameserver).   There is wide variety of software that performs this service:  BIND, PowerDNS  etc.", 
+            "title": "Nameserver"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#authoritative-nameserver", 
+            "text": "For every zone, somebody has to maintain a file of the hostnames and IP address associations. This is generally an administrative function performed by a human, and in most cases one machine has this file. It s the zone master.   Zones with multiple public nameservers make administrative arrangements to transfer the zone data automatically to additional slave nameservers, all of which are authoritative as far as the outside world is concerned. The distinction between master and slave is unimportant for this paper.", 
+            "title": "Authoritative Nameserver"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#resource-record", 
+            "text": "Though most think of DNS as providing hostname-to-IP mapping, there are actually other kinds of questions we can ask of a nameserver, and this highlights the notion that DNS is really a database of  resource records .   The most common type is an IP Address (an  A  record), but other records exist too: NS (nameserver), MX (mail exchanger), SOA (Start of Authority), and so on.       Record type  Purpose      A  IP Address record. Using a hostname to get an IPv4 adress.    AAAA  IP Address record. Using a hostname to get an IPv6 adress.    PTR  reverse DNS lookup. Using IP address to get hostname.    NS  Nameserver record responsible for the domain asked about.    MX  Mail Exchanger record. server responsible for handling email for the given domain.    SOA  Start of Authorities record describes some key data about the zone as defined by the zone administrator.    CNAME  Canonical Name or Alias, this allows providing an alternate name for a resource.    TXT  A generic Text record that provides descriptive data about domain.", 
+            "title": "Resource Record"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#zone", 
+            "text": "Think of this as a  domain : a collection of hostnames/IP pairs all managed together.   Subdomains are sometimes part of the main zone, sometimes they are a separate zone.", 
+            "title": "zone"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#dns-query-flow", 
+            "text": "", 
+            "title": "DNS - Query flow"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#step-i", 
+            "text": "Your OS tries to resolve the address locally(using /etc/hosts on linux, looking in local cache etc). If the answer is not available locally then a request is made to the recursive server.", 
+            "title": "Step I"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#step-ii", 
+            "text": "Your recursive server checks it s cache, if it doesn t find the record then the recursive server makes a request on your behalf to any one of the 13 root servers.", 
+            "title": "Step II"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#step-iii", 
+            "text": "The root server doesn t know the answer to your request, but it sends a referral to youe revursive name server with a list of the Global Top Level Domain (GTLD) servers responsible for the a domain(.com, .net, .org etc). This is in the form of NS records of servers more qualified to answer our query.", 
+            "title": "Step III"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#step-iv", 
+            "text": "Using the referral from the root servers, your recursive nameserver chooses one of the authoritative servers at random and sends off the same query.  The GTLD server doesn t know the specific answer to our query, but it does know how to get us closer. Like the root servers, it sends back a referral (a set of NS records) that are likely to have what we seek.", 
+            "title": "Step IV"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#step-v", 
+            "text": "This time the recursive nameserver, following a chain of referrals on the client s behalf, and it picks one of the nameservers at random and sends off a third query (the same as the other two).", 
+            "title": "Step V"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#step-vi", 
+            "text": "Now with answer in hand, the ISP s recursive nameserver hands that answer back to the client, and that satisfies the entire query.  The recursive nameserver also files away this answer into its own cache in case this or some other client makes the same query later.", 
+            "title": "Step VI"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#dnspython-library", 
+            "text": "dnspython is a DNS toolkit for Python. It supports almost all record types. It can be used for queries, zone transfers, and dynamic updates.  dnspython provides both high and low level access to DNS. The high level classes perform queries for data of a given name, type, and class, and return an answer set. The low level classes allow direct manipulation of DNS zones, messages, names, and records.", 
+            "title": "dnspython library"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#installation", 
+            "text": "You can install dnspython using PIP.  $ pip install dnspython", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#basic-dns-queries", 
+            "text": "#!/usr/bin/env python\n# Basic DNS query\n\nimport argparse, dns.resolver\n\ndef lookup(name):\n    for qtype in 'A', 'AAAA', 'CNAME', 'MX', 'NS':\n        answer = dns.resolver.query(name, qtype, raise_on_no_answer=False)\n        if answer.rrset is not None:\n            print(answer.rrset)\n\nif __name__ == '__main__':\n    parser = argparse.ArgumentParser(description='Resolve a name using DNS')\n    parser.add_argument('name', help='name that you want to look up in DNS')\n    lookup(parser.parse_args().name)", 
+            "title": "Basic DNS queries"
+        }, 
+        {
+            "location": "/protocols/dns/index.html#zone-transfer", 
+            "text": "import dns.query\nimport dns.zone\n\nz = dns.zone.from_xfr(dns.query.xfr('nsztm1.digi.ninja', 'zonetransfer.me'))\nnames = z.nodes.keys()\nnames.sort()\nfor n in names:\n    print z[n].to_text(n)  EASTER EGG in google dns  How do we get TXT, CNAME and SOA records from dnspython? stackoverflow  \n  \u00a9 Copyright, all the DNS query illustrations on this page are made by and belong to Steve Friedl of Unixwiz.net", 
+            "title": "Zone transfer"
+        }, 
+        {
+            "location": "/protocols/telnet/index.html", 
+            "text": "Telnet\n\n\n\n\n\n\n\n\n\n\nTelnet Protocol\n\n\n\n\n\n\n\n\n\n\n\n\nPurpose\n\n\nRemote shell access.\n\n\n\n\n\n\nStandard\n\n\nRFC 854\n\n\n\n\n\n\nRuns atop\n\n\nTCP/IP\n\n\n\n\n\n\nPort number\n\n\n23\n\n\n\n\n\n\nLibraries\n\n\npexpect, \ntelnetlib\n\n\n\n\n\n\nExceptions\n\n\nsocket.error, socket.gaierror, EOFError, select.error\n\n\n\n\n\n\n\n\n\n\nWhat is telnet?\n\n\nTelnet is an application layer protocol used on the Internet or local area networks to provide a bidirectional interactive text-oriented communication facility using a virtual terminal connection.\n\n\nWhy NOT to use telnet?\n\n\n\n\nTelnet is a \nterribly insecure protocol\n. It\ns a plain-text protocol, anyone watching your Telnet packets on the wire will see your username, password, and everything you do on the remote system.\n\n\nA lot of  Telnet have no authentication that would ensure communication is carried out between the two desired hosts and not intercepted in the middle.\n\n\nSeveral critical vulnerabilities have been discovered over the years in commonly used Telnet daemons.\n\n\nTelnet is inefficient when it comes to anything other than remote shell access, like file transfer, authentication management etc.\n\n\nFor the above reasons Telnet is largely replaced by SSH and \nr\n-family of protocols(rlogin, rsh, and rcp).\n\n\n\n\nWhy telnet?\n\n\n\n\nTelnet is fairly prevalent in networking devices(routers/modems) that sit deep inside a well-firewalled corporate network.\n\n\nTelnet is still a popular way to access remote shell in many embedded(IoT) devices.\n\n\n\n\n\n\nA study on state of telnet in embedded systems - \nTelnet is not dead \n\n\n\n\nScripting Telnet\n\n\n\n\nTelnet is an interactive protocol that provides a virtual terminal for interaction. We\nll try to automate the interaction part using python scripting.\n\n\nTelnet is so hard to script because it\ns lacks serious standardization with regards to username and password prompts, error messages or responses. One script     might not fit all the telnet implementations.\n\n\nScripting Telnet is like playing a purely textual game. You recieve some text and based on it you reply with something intelligible to the server.\n\n\n\n\nexpect\n\n\n[explain expect]\n[one sample]\n\n\npexpect\n\n\n\n\npexpect is pure Python implementation of expect.\n\n\nLike expect pexpect is technically not a network aware program, but it can be used to automate interactive programs like Telnet and SSH.\n\n\n\n\n[pexpect docs link]\n[pexpect telnet script]\n\n\ntelnetlib\n\n\n\n\ntelnetlib is similar to \npexpect\n but crafted for automating Telnet protocol.\n\n\ntelnetlib not only has basic methods for sending and receiving data but also a few routines that will watch and wait for a particular string to arrive from the remote system.", 
+            "title": "Telnet"
+        }, 
+        {
+            "location": "/protocols/telnet/index.html#telnet", 
+            "text": "Telnet Protocol       Purpose  Remote shell access.    Standard  RFC 854    Runs atop  TCP/IP    Port number  23    Libraries  pexpect,  telnetlib    Exceptions  socket.error, socket.gaierror, EOFError, select.error", 
+            "title": "Telnet"
+        }, 
+        {
+            "location": "/protocols/telnet/index.html#what-is-telnet", 
+            "text": "Telnet is an application layer protocol used on the Internet or local area networks to provide a bidirectional interactive text-oriented communication facility using a virtual terminal connection.", 
+            "title": "What is telnet?"
+        }, 
+        {
+            "location": "/protocols/telnet/index.html#why-not-to-use-telnet", 
+            "text": "Telnet is a  terribly insecure protocol . It s a plain-text protocol, anyone watching your Telnet packets on the wire will see your username, password, and everything you do on the remote system.  A lot of  Telnet have no authentication that would ensure communication is carried out between the two desired hosts and not intercepted in the middle.  Several critical vulnerabilities have been discovered over the years in commonly used Telnet daemons.  Telnet is inefficient when it comes to anything other than remote shell access, like file transfer, authentication management etc.  For the above reasons Telnet is largely replaced by SSH and  r -family of protocols(rlogin, rsh, and rcp).", 
+            "title": "Why NOT to use telnet?"
+        }, 
+        {
+            "location": "/protocols/telnet/index.html#why-telnet", 
+            "text": "Telnet is fairly prevalent in networking devices(routers/modems) that sit deep inside a well-firewalled corporate network.  Telnet is still a popular way to access remote shell in many embedded(IoT) devices.    A study on state of telnet in embedded systems -  Telnet is not dead", 
+            "title": "Why telnet?"
+        }, 
+        {
+            "location": "/protocols/telnet/index.html#scripting-telnet", 
+            "text": "Telnet is an interactive protocol that provides a virtual terminal for interaction. We ll try to automate the interaction part using python scripting.  Telnet is so hard to script because it s lacks serious standardization with regards to username and password prompts, error messages or responses. One script     might not fit all the telnet implementations.  Scripting Telnet is like playing a purely textual game. You recieve some text and based on it you reply with something intelligible to the server.", 
+            "title": "Scripting Telnet"
+        }, 
+        {
+            "location": "/protocols/telnet/index.html#expect", 
+            "text": "[explain expect]\n[one sample]", 
+            "title": "expect"
+        }, 
+        {
+            "location": "/protocols/telnet/index.html#pexpect", 
+            "text": "pexpect is pure Python implementation of expect.  Like expect pexpect is technically not a network aware program, but it can be used to automate interactive programs like Telnet and SSH.   [pexpect docs link]\n[pexpect telnet script]", 
+            "title": "pexpect"
+        }, 
+        {
+            "location": "/protocols/telnet/index.html#telnetlib", 
+            "text": "telnetlib is similar to  pexpect  but crafted for automating Telnet protocol.  telnetlib not only has basic methods for sending and receiving data but also a few routines that will watch and wait for a particular string to arrive from the remote system.", 
+            "title": "telnetlib"
+        }, 
+        {
+            "location": "/protocols/ssh/index.html", 
+            "text": "SSH: The Secure Shell\n\n\n\n\n\n\n\n\nSSH protocol\n\n\n\n\n\n\n\n\n\n\n\n\nPurpose\n\n\nSecure remote shell, file transfer, port forwarding\n\n\n\n\n\n\nStandard\n\n\nRFC 4250\u20134256\n\n\n\n\n\n\nRuns atop\n\n\nTCP/IP\n\n\n\n\n\n\nPort number\n\n\n22\n\n\n\n\n\n\nLibraries\n\n\npexpect, pxssh, \nparamiko\n\n\n\n\n\n\nExceptions\n\n\nsocket.error, socket.gaierror, paramiko.SSHException\n\n\n\n\n\n\n\n\nWhat is SSH?\n\n\n\n\nSSH protocol is one of the best-known examples of a secure, encrypted protocol.\n\n\nSSH is descended from the \nr\n-family of protocols(rlogin, rsh, and rcp).\n\n\nSSH preserved all the great features of the early remote-shell protocol added wit hsecurity, encryption and efficient multiplexing.\n\n\n\n\nSSH Overview\n\n\nMultiplexing\n\n\n[what is protocol multiplexing]\n\n\nFor example, UDP and TCP use the concept of port numbers, let\ns several different applications run on a machine over single IP. IP protocol has no clue about the many applications running at transport layer.\n\n\nA lot of high level protocols tend to ignore the concept of multiplexing. For example, it is not possible to multiplex using the most popular application layer protocol, HTTP 1.1.\n\n\nSSH is a sophisticated protocol that implements its own multiplexing. SSH has a notion of \nchannels\n, mutliple channels can run on same SSH socket. Every block of information SSH sends across its socket is labeled with a \u201cchannel\u201d identifier so that several conversations can share the socket.\n\n\nMultiplexing make sense because the real expense of an SSH connection is setting it up. It\ns takes a few second of real time to setup an SSH connection. So using an SSH connection for as many operations justifies the high intitial expense of setting it up.\n\n\nOnce connected on SSH, you can create several kinds of channels: \n\n\n\n\nAn interactive shell session, like that supported by Telnet.\n\n\nAn interactive shell session, like that supported by Telnet.\n\n\nThe individual execution of a single command.\n\n\nA file transfer session letting you browse the remote filesystem.\n\n\nA port forward that intercepts TCP connections.\n\n\n\n\nSSH connection\n\n\nBefore automating SSH connections, we\nll take a brief look at how SSH conections are established. We\nll not delve into SSH protocol internals, we\nll only look at the connection flow.\n\n\nSSH Host keys\n\n\n\n\n\n\nWhen an SSH client first connects to a remote host, the two exchange temporary public keys that let them encrypt the rest of their conversation without revealing any information to any watching third parties.\n\n\n\n\n\n\nThen, before the client is willing to divulge any further information, it demands proof of the remote server\u2019s identity. This is to make sure that you don\nt reveal username or password an attacker who got hold of server\ns address.\n\n\n\n\n\n\nServer identity\n\n\n\n\n\n\nOne way to deal with identifying machines on the Internet is to deploy your own Public Key Infrastructure(PKI) but using public-key infrastructure would be quite a cumbersome process for something like SSH.\n\n\n\n\n\n\nAn SSH server, when installed, creates its own random public-private key pair that is not signed by anybody. Key distribution can happen on of the two following ways: \n\n\n\n\nA system admin writes a \nscript that gathers up all the host public keys in an organization\n, creates an \nssh_known_hosts\n listing them all, and places this file in the /etc/sshd directory on every system in the organization. Once this done, every SSH client will know about every SSH host key before they even connect for the first time.\n\n\nAnother approach is that, rather than knowing the host keys before hand, SSH clients will \nsave host keys at the moment of first connection\n. You actually have no guarantee on this first encounter that you are really talking to the host you think it is. Nevertheless, at least you will be guaranteed that every subsequent connection you ever make to that machine is going to the right place.", 
+            "title": "SSH"
+        }, 
+        {
+            "location": "/protocols/ssh/index.html#ssh-the-secure-shell", 
+            "text": "SSH protocol       Purpose  Secure remote shell, file transfer, port forwarding    Standard  RFC 4250\u20134256    Runs atop  TCP/IP    Port number  22    Libraries  pexpect, pxssh,  paramiko    Exceptions  socket.error, socket.gaierror, paramiko.SSHException", 
+            "title": "SSH: The Secure Shell"
+        }, 
+        {
+            "location": "/protocols/ssh/index.html#what-is-ssh", 
+            "text": "SSH protocol is one of the best-known examples of a secure, encrypted protocol.  SSH is descended from the  r -family of protocols(rlogin, rsh, and rcp).  SSH preserved all the great features of the early remote-shell protocol added wit hsecurity, encryption and efficient multiplexing.", 
+            "title": "What is SSH?"
+        }, 
+        {
+            "location": "/protocols/ssh/index.html#ssh-overview", 
+            "text": "", 
+            "title": "SSH Overview"
+        }, 
+        {
+            "location": "/protocols/ssh/index.html#multiplexing", 
+            "text": "[what is protocol multiplexing]  For example, UDP and TCP use the concept of port numbers, let s several different applications run on a machine over single IP. IP protocol has no clue about the many applications running at transport layer.  A lot of high level protocols tend to ignore the concept of multiplexing. For example, it is not possible to multiplex using the most popular application layer protocol, HTTP 1.1.  SSH is a sophisticated protocol that implements its own multiplexing. SSH has a notion of  channels , mutliple channels can run on same SSH socket. Every block of information SSH sends across its socket is labeled with a \u201cchannel\u201d identifier so that several conversations can share the socket.  Multiplexing make sense because the real expense of an SSH connection is setting it up. It s takes a few second of real time to setup an SSH connection. So using an SSH connection for as many operations justifies the high intitial expense of setting it up.  Once connected on SSH, you can create several kinds of channels:    An interactive shell session, like that supported by Telnet.  An interactive shell session, like that supported by Telnet.  The individual execution of a single command.  A file transfer session letting you browse the remote filesystem.  A port forward that intercepts TCP connections.", 
+            "title": "Multiplexing"
+        }, 
+        {
+            "location": "/protocols/ssh/index.html#ssh-connection", 
+            "text": "Before automating SSH connections, we ll take a brief look at how SSH conections are established. We ll not delve into SSH protocol internals, we ll only look at the connection flow.", 
+            "title": "SSH connection"
+        }, 
+        {
+            "location": "/protocols/ssh/index.html#ssh-host-keys", 
+            "text": "When an SSH client first connects to a remote host, the two exchange temporary public keys that let them encrypt the rest of their conversation without revealing any information to any watching third parties.    Then, before the client is willing to divulge any further information, it demands proof of the remote server\u2019s identity. This is to make sure that you don t reveal username or password an attacker who got hold of server s address.", 
+            "title": "SSH Host keys"
+        }, 
+        {
+            "location": "/protocols/ssh/index.html#server-identity", 
+            "text": "One way to deal with identifying machines on the Internet is to deploy your own Public Key Infrastructure(PKI) but using public-key infrastructure would be quite a cumbersome process for something like SSH.    An SSH server, when installed, creates its own random public-private key pair that is not signed by anybody. Key distribution can happen on of the two following ways:    A system admin writes a  script that gathers up all the host public keys in an organization , creates an  ssh_known_hosts  listing them all, and places this file in the /etc/sshd directory on every system in the organization. Once this done, every SSH client will know about every SSH host key before they even connect for the first time.  Another approach is that, rather than knowing the host keys before hand, SSH clients will  save host keys at the moment of first connection . You actually have no guarantee on this first encounter that you are really talking to the host you think it is. Nevertheless, at least you will be guaranteed that every subsequent connection you ever make to that machine is going to the right place.", 
+            "title": "Server identity"
+        }, 
+        {
+            "location": "/libraries/netaddr/index.html", 
+            "text": "netaddr\n\n\nOverview\n\n\nA Python library for representing and manipulating network addresses.\n\n\nProvides support for:\n\n\nLayer 3 addresses\n\n\n\n\nIPv4 and IPv6 addresses, subnets, masks, prefixes\n\n\niterating, slicing, sorting, summarizing and classifying IP networks\n\n\ndealing with various ranges formats (CIDR, arbitrary ranges and globs, nmap)\n\n\nset based operations (unions, intersections etc) over IP addresses and subnets\n\n\nparsing a large variety of different formats and notations\n\n\nlooking up IANA IP block information\n\n\ngenerating DNS reverse lookups\n\n\nsupernetting and subnetting\n\n\n\n\nLayer 2 addresses\n\n\n\n\nrepresentation and manipulation MAC addresses and EUI-64 identifiers\n\n\nlooking up IEEE organisational information (OUI, IAB)\n\n\ngenerating derived IPv6 addresses\n\n\n\n\nInstallation\n\n\nInstall the latest \nnetaddr\n from PIP\n\n\npip install netaddr\n\n\n\n\nImporting netaddr\n\n\nfrom netaddr import *\n\n\n\n\n\n\nimporting modules\n\n\nImporting this way is not optimal and leads to name clashes.\n\nIn your own code, you should be explicit about the classes,\nfunctions and constants you import to avoid name clashes.\n\n\n\n\nBasic operations\n\n\nIPAddress\n\n\nIPAddress object represents a single IP address.\n\n\n from netaddr import IPAddress\n\n\n\n ip = IPAddress('192.21.8.11')\n\n ip.version\n4\n\n dir(ip)\n[ ... Snipped... 'bin', 'bits', 'format', 'info', 'ipv4', 'ipv6', \n'is_hostmask', 'is_ipv4_compat', 'is_ipv4_mapped', 'is_link_local',\n'is_loopback', 'is_multicast', 'is_netmask', 'is_private', 'is_reserved',\n'is_unicast', 'key', 'netmask_bits', 'packed', 'reverse_dns', 'sort_key',\n'value', 'version', 'words']\n\n \n\n\n\n\n\nThere are methods to handle coverting an IP adress into binary or bits, split an IP, pack an\n\n\n ip.bin\n'0b11000000000101010000100000001011'\n\n \n\n ip.bits()\n'11000000.00010101.00001000.00001011'\n\n \n\n ip.words\n(192, 21, 8, 11)\n\n ip.packed\n'\\xc0\\x15\\x08\\x0b'\n\n\n\n\n\nThere are methods to check if the type of IP address(class, scope, type)\n\n\n ip.version\n6\n\n ip.is_unicast()\nTrue\n\n \n\n ip.is_link_local()\nTrue", 
+            "title": "netaddr"
+        }, 
+        {
+            "location": "/libraries/netaddr/index.html#netaddr", 
+            "text": "", 
+            "title": "netaddr"
+        }, 
+        {
+            "location": "/libraries/netaddr/index.html#overview", 
+            "text": "A Python library for representing and manipulating network addresses.  Provides support for:  Layer 3 addresses   IPv4 and IPv6 addresses, subnets, masks, prefixes  iterating, slicing, sorting, summarizing and classifying IP networks  dealing with various ranges formats (CIDR, arbitrary ranges and globs, nmap)  set based operations (unions, intersections etc) over IP addresses and subnets  parsing a large variety of different formats and notations  looking up IANA IP block information  generating DNS reverse lookups  supernetting and subnetting   Layer 2 addresses   representation and manipulation MAC addresses and EUI-64 identifiers  looking up IEEE organisational information (OUI, IAB)  generating derived IPv6 addresses", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/libraries/netaddr/index.html#installation", 
+            "text": "Install the latest  netaddr  from PIP  pip install netaddr", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/libraries/netaddr/index.html#importing-netaddr", 
+            "text": "from netaddr import *   importing modules  Importing this way is not optimal and leads to name clashes. \nIn your own code, you should be explicit about the classes,\nfunctions and constants you import to avoid name clashes.", 
+            "title": "Importing netaddr"
+        }, 
+        {
+            "location": "/libraries/netaddr/index.html#basic-operations", 
+            "text": "", 
+            "title": "Basic operations"
+        }, 
+        {
+            "location": "/libraries/netaddr/index.html#ipaddress", 
+            "text": "IPAddress object represents a single IP address.   from netaddr import IPAddress   ip = IPAddress('192.21.8.11')  ip.version\n4  dir(ip)\n[ ... Snipped... 'bin', 'bits', 'format', 'info', 'ipv4', 'ipv6', \n'is_hostmask', 'is_ipv4_compat', 'is_ipv4_mapped', 'is_link_local',\n'is_loopback', 'is_multicast', 'is_netmask', 'is_private', 'is_reserved',\n'is_unicast', 'key', 'netmask_bits', 'packed', 'reverse_dns', 'sort_key',\n'value', 'version', 'words']    \nThere are methods to handle coverting an IP adress into binary or bits, split an IP, pack an   ip.bin\n'0b11000000000101010000100000001011'    ip.bits()\n'11000000.00010101.00001000.00001011'    ip.words\n(192, 21, 8, 11)  ip.packed\n'\\xc0\\x15\\x08\\x0b'  \nThere are methods to check if the type of IP address(class, scope, type)   ip.version\n6  ip.is_unicast()\nTrue    ip.is_link_local()\nTrue", 
+            "title": "IPAddress"
+        }, 
+        {
+            "location": "/exercises/exercises/index.html", 
+            "text": "Google DNS easter egg\n\n\n\n\n\n\n\n\nSSH exercises\n\n\nDummy network scanner", 
+            "title": "Basic exercises"
+        }, 
+        {
+            "location": "/exercises/exercises/index.html#google-dns-easter-egg", 
+            "text": "", 
+            "title": "Google DNS easter egg"
+        }, 
+        {
+            "location": "/exercises/exercises/index.html#ssh-exercises", 
+            "text": "", 
+            "title": "SSH exercises"
+        }, 
+        {
+            "location": "/exercises/exercises/index.html#dummy-network-scanner", 
+            "text": "", 
+            "title": "Dummy network scanner"
+        }, 
+        {
+            "location": "/exercises/logpuzzle/index.html", 
+            "text": "", 
+            "title": "Log puzzle"
+        }, 
+        {
+            "location": "/feedback/index.html", 
+            "text": "Feedback \n Suggestions\n\n\n\n\npythonhumla@gmail.com\n\n\nGive anonymous feedback at \nhttps://www.suggestionox.com/r/pythonhumla\n\n\n\n\nCredits\n\n\nnull - The Open Security Community. \n |  \n \nhttps://null.co.in/\n\nGoogle edu for their free-to-share Python bootcamp. \n |  \n \nhttps://developers.google.com/edu/python/\n\nTom Christie, Dougal Matthews for their beautiful documentation generator \n |  \n \nmkdocs.org\n\nBrandon Rhodes - Foundations of Python Network Programming \n |  \n \nrhodesmill.org/brandon/\n\nSteve Friedl for beautiful DNS illustrations | \n \nAn Illustrated Guide to the Kaminsky DNS Vulnerability", 
+            "title": "Feedback & Credits"
+        }, 
+        {
+            "location": "/feedback/index.html#feedback-suggestions", 
+            "text": "pythonhumla@gmail.com  Give anonymous feedback at  https://www.suggestionox.com/r/pythonhumla", 
+            "title": "Feedback &amp; Suggestions"
+        }, 
+        {
+            "location": "/feedback/index.html#credits", 
+            "text": "null - The Open Security Community.   |     https://null.co.in/ \nGoogle edu for their free-to-share Python bootcamp.   |     https://developers.google.com/edu/python/ \nTom Christie, Dougal Matthews for their beautiful documentation generator   |     mkdocs.org \nBrandon Rhodes - Foundations of Python Network Programming   |     rhodesmill.org/brandon/ \nSteve Friedl for beautiful DNS illustrations |    An Illustrated Guide to the Kaminsky DNS Vulnerability", 
+            "title": "Credits"
+        }
+    ]
+}

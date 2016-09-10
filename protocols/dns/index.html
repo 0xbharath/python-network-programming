@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Bharath(yamakira_)">
+  
+  <title>DNS - Python Network programming</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "DNS";
+    var mkdocs_page_input_path = "protocols/dns.md";
+    var mkdocs_page_url = "/protocols/dns/index.html";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> Python Network programming</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Network Programming in Python</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../index.html">Course overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/license/index.html">License & Attributions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/bigger_picture/index.html">Bigger picture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/speakers/index.html">Speakers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../workshop_intro/workshop_settings/index.html">Workshop settings</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Networking</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../layers/index.html">Layers</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Socket Interface</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../socket_interface/index.html">Socket interface</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Protocols</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">DNS</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#domain-name-system">Domain Name System</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-dns">What is DNS?</a></li>
+                
+                    <li><a class="toctree-l4" href="#dns-terminology">DNS - Terminology</a></li>
+                
+                    <li><a class="toctree-l4" href="#dns-query-flow">DNS - Query flow</a></li>
+                
+                    <li><a class="toctree-l4" href="#dnspython-library">dnspython library</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../telnet/index.html">Telnet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ssh/index.html">SSH</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Misc Networking libraries</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../libraries/netaddr/index.html">netaddr</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Exercises</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../exercises/exercises/index.html">Basic exercises</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../exercises/logpuzzle/index.html">Log puzzle</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Epilogue</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../feedback/index.html">Feedback & Credits</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python Network programming</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Protocols &raquo;</li>
+        
+      
+    
+    <li>DNS</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="domain-name-system">Domain Name System</h1>
+<hr />
+<table>
+<thead>
+<tr>
+<th>DNS Protocol</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Resolve hostnames by returning IP addresses</td>
+</tr>
+<tr>
+<td><strong>Standard</strong></td>
+<td>RFC 1034 and RFC 1035</td>
+</tr>
+<tr>
+<td><strong>Runs atop</strong></td>
+<td>UDP/IP and TCP/IP</td>
+</tr>
+<tr>
+<td><strong>Port number</strong></td>
+<td>53</td>
+</tr>
+<tr>
+<td><strong>Libraries</strong></td>
+<td><strong>dnspython</strong>  (<em>dnspython3</em> for python 3.x)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="what-is-dns">What is DNS?</h2>
+<p>&ldquo;The Domain Name System, or DNS, is one of the Internet&rsquo;s fundamental building blocks. It is the <strong>global, hierarchical, and distributed host information database</strong> that&rsquo;s responsible for translating names into addresses and vice versa, routing mail to its proper destination, and many other services.&rdquo; <br/>
+- <a href='http://www.bind9.net/'>Bind9.net</a><br></p>
+<ul>
+<li>The Domain Name System (DNS) is the scheme by which millions of Internet hosts cooperate to answer the question
+of what hostnames resolve to which IP addresses. </li>
+<li>The DNS is the mechanism which translates names like <a href='https://www.iana.org'>iana.org</a> into IPv4 addresses like 192.0.43.8, or 2001:500:88:200::8 if you are already enjoying IPv6.</li>
+</ul>
+<p align="center">
+<img align="center" src="../../img/dns_getaddrinfo.png" alt="getaddrinfo">
+</p>
+
+<h2 id="dns-terminology">DNS - Terminology</h2>
+<p>Before we see how DNS operates, we need to be aware of the terminology used in DNS, atleast software wise.</p>
+<h4 id="resolver">Resolver</h4>
+<ul>
+<li>Resolver is the <strong>client part of the DNS client/server system</strong>: it asks the questions about hostnames. The resolver is usually a small library compiled into each program that requires DNS services, and it knows just enough to send questions to a nearby nameserver. </li>
+<li>Resolvers are usually very small and dumb, relying on the servers to do the heavy lifting.</li>
+</ul>
+<h4 id="recursive-nameserver">Recursive Nameserver</h4>
+<ul>
+<li>This is a <strong>nameserver that&rsquo;s willing to go out on the internet and find the results</strong> for zones it&rsquo;s not authoritative for, as a service to its clients. Not all nameservers are configured to provide recursive service, or are limited to just trusted clients (say, an ISP may provide nameservice only to its customers).</li>
+<li>The <em>raw IP addresses</em> of recursive servers are specifieds on the client, either manually or by using DHCP.</li>
+<li>Usually an ISP provides recursive DNS server address but if people are unhappy with their ISP’s DNS behavior/performance, they can configure to use third party servers, like the servers at 8.8.8.8 and 8.8.4.4 run by Google.</li>
+</ul>
+<h4 id="nameserver">Nameserver</h4>
+<ul>
+<li>This is <strong>server software that answers DNS questions</strong>.</li>
+<li>Sometimes a nameserver knows the answer directly (if it&rsquo;s &ldquo;<strong>authoritative</strong>&rdquo; for the zone), other times it has to go out to the internet and ask around to find the answer (if it&rsquo;s a <strong>recursive</strong> nameserver). </li>
+<li>There is wide variety of software that performs this service: <strong>BIND, PowerDNS</strong> etc.</li>
+</ul>
+<h4 id="authoritative-nameserver">Authoritative Nameserver</h4>
+<ul>
+<li>For every zone, somebody has to maintain a file of the hostnames and IP address associations. This is generally an administrative function performed by a human, and in most cases one machine has this file. It&rsquo;s the zone master. </li>
+<li>Zones with multiple public nameservers make administrative arrangements to transfer the zone data automatically to additional slave nameservers, all of which are authoritative as far as the outside world is concerned. The distinction between master and slave is unimportant for this paper. </li>
+</ul>
+<h4 id="resource-record">Resource Record</h4>
+<ul>
+<li>Though most think of DNS as providing hostname-to-IP mapping, there are actually other kinds of questions we can ask of a nameserver, and this highlights the notion that DNS is really a database of &ldquo;resource records&rdquo;. </li>
+<li>The most common type is an IP Address (an &ldquo;A&rdquo; record), but other records exist too: NS (nameserver), MX (mail exchanger), SOA (Start of Authority), and so on. </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Record type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>A</strong></td>
+<td>IP Address record. Using a hostname to get an IPv4 adress.</td>
+</tr>
+<tr>
+<td align="center"><strong>AAAA</strong></td>
+<td>IP Address record. Using a hostname to get an IPv6 adress.</td>
+</tr>
+<tr>
+<td align="center"><strong>PTR</strong></td>
+<td>reverse DNS lookup. Using IP address to get hostname.</td>
+</tr>
+<tr>
+<td align="center"><strong>NS</strong></td>
+<td>Nameserver record responsible for the domain asked about.</td>
+</tr>
+<tr>
+<td align="center"><strong>MX</strong></td>
+<td>Mail Exchanger record. server responsible for handling email for the given domain.</td>
+</tr>
+<tr>
+<td align="center"><strong>SOA</strong></td>
+<td>Start of Authorities record describes some key data about the zone as defined by the zone administrator.</td>
+</tr>
+<tr>
+<td align="center"><strong>CNAME</strong></td>
+<td>Canonical Name or Alias, this allows providing an alternate name for a resource.</td>
+</tr>
+<tr>
+<td align="center"><strong>TXT</strong></td>
+<td>A generic Text record that provides descriptive data about domain.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="zone">zone</h4>
+<ul>
+<li>Think of this as a &ldquo;domain&rdquo;: a collection of hostnames/IP pairs all managed together. </li>
+<li>Subdomains are sometimes part of the main zone, sometimes they are a separate zone.</li>
+</ul>
+<h2 id="dns-query-flow">DNS - Query flow</h2>
+<hr />
+<h4 id="step-i">Step I</h4>
+<ul>
+<li>Your OS tries to resolve the address locally(using /etc/hosts on linux, looking in local cache etc). If the answer is not available locally then a request is made to the recursive server.</li>
+</ul>
+<p align="center">
+<img align="center" src="../../img/dns_resolution_1.png" alt="dns resolution - recursive server">
+</p>
+
+<hr />
+<h4 id="step-ii">Step II</h4>
+<ul>
+<li>Your recursive server checks it&rsquo;s cache, if it doesn&rsquo;t find the record then the recursive server makes a request on your behalf to any one of the 13 root servers.</li>
+</ul>
+<p align="center">
+<img align="center" src="../../img/dns_root_servers.png" alt="list of root servers">
+</p>
+
+<hr />
+<h4 id="step-iii">Step III</h4>
+<p>The root server doesn&rsquo;t know the answer to your request, but it sends a referral to youe revursive name server with a list of the Global Top Level Domain (GTLD) servers responsible for the a domain(.com, .net, .org etc). This is in the form of NS records of servers more qualified to answer our query.</p>
+<p align="center">
+<img align="center" src="../../img/dns_resolution_2.png" alt="dns resolution - root servers">
+</p>
+
+<hr />
+<h4 id="step-iv">Step IV</h4>
+<ul>
+<li>Using the referral from the root servers, your recursive nameserver chooses one of the authoritative servers at random and sends off the same query.</li>
+<li>The GTLD server doesn&rsquo;t know the specific answer to our query, but it does know how to get us closer. Like the root servers, it sends back a referral (a set of NS records) that are likely to have what we seek. </li>
+</ul>
+<p align="center">
+<img align="center" src="../../img/dns_resolution_3.png" alt="dns resolution - gtld servers">
+</p>
+
+<hr />
+<h4 id="step-v">Step V</h4>
+<ul>
+<li>This time the recursive nameserver, following a chain of referrals on the client&rsquo;s behalf, and it picks one of the nameservers at random and sends off a third query (the same as the other two). </li>
+</ul>
+<p align="center">
+<img align="center" src="../../img/dns_resolution_4.png" alt="dns resolution - gtld servers">
+</p>
+
+<hr />
+<h4 id="step-vi">Step VI</h4>
+<ul>
+<li>Now with answer in hand, the ISP&rsquo;s recursive nameserver hands that answer back to the client, and that satisfies the entire query.</li>
+<li>The recursive nameserver also files away this answer into its own cache in case this or some other client makes the same query later. </li>
+</ul>
+<p align="center">
+<img align="center" src="../../img/dns_resolution_5.png" alt="dns resolution - ">
+</p>
+
+<hr />
+<h2 id="dnspython-library">dnspython library</h2>
+<ul>
+<li>dnspython is a DNS toolkit for Python. It supports almost all record types. It can be used for queries, zone transfers, and dynamic updates.
+<br></li>
+<li>dnspython provides both high and low level access to DNS. The high level classes perform queries for data of a given name, type, and class, and return an answer set. The low level classes allow direct manipulation of DNS zones, messages, names, and records.</li>
+</ul>
+<h4 id="installation">Installation</h4>
+<p>You can install dnspython using PIP.</p>
+<pre><code class="bash">$ pip install dnspython
+</code></pre>
+
+<h4 id="basic-dns-queries">Basic DNS queries</h4>
+<pre><code class="python">#!/usr/bin/env python
+# Basic DNS query
+
+import argparse, dns.resolver
+
+def lookup(name):
+    for qtype in 'A', 'AAAA', 'CNAME', 'MX', 'NS':
+        answer = dns.resolver.query(name, qtype, raise_on_no_answer=False)
+        if answer.rrset is not None:
+            print(answer.rrset)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Resolve a name using DNS')
+    parser.add_argument('name', help='name that you want to look up in DNS')
+    lookup(parser.parse_args().name)
+</code></pre>
+
+<h4 id="zone-transfer">Zone transfer</h4>
+<pre><code class="python">import dns.query
+import dns.zone
+
+z = dns.zone.from_xfr(dns.query.xfr('nsztm1.digi.ninja', 'zonetransfer.me'))
+names = z.nodes.keys()
+names.sort()
+for n in names:
+    print z[n].to_text(n)
+</code></pre>
+
+<p><strong>EASTER EGG in google dns</strong></p>
+<p>How do we get TXT, CNAME and SOA records from dnspython? stackoverflow</p>
+<footer>
+ <small>© Copyright, all the DNS query illustrations on this page are made by and belong to Steve Friedl of Unixwiz.net</small>
+</footer>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../telnet/index.html" class="btn btn-neutral float-right" title="Telnet">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../socket_interface/index.html" class="btn btn-neutral" title="Socket interface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../socket_interface/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../telnet/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

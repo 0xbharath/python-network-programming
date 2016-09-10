@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A workshop on network programming using Python.">
+  <meta name="author" content="Bharath(yamakira_)">
+  
+  <title>Python Network programming</title>
+  
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/index.html";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Python Network programming</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Network Programming in Python</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">Course overview</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#workshop-overview">Workshop overview</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#concepts-covered">Concepts covered</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#skill-prerequisites">Skill prerequisites</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#technical-prerequisites">Technical prerequisites</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#librariesmodules">Libraries/Modules</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="workshop_intro/license/index.html">License & Attributions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="workshop_intro/bigger_picture/index.html">Bigger picture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="workshop_intro/speakers/index.html">Speakers</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="workshop_intro/workshop_settings/index.html">Workshop settings</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Networking</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="layers/index.html">Layers</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Socket Interface</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="socket_interface/index.html">Socket interface</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Protocols</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="protocols/dns/index.html">DNS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="protocols/telnet/index.html">Telnet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="protocols/ssh/index.html">SSH</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Misc Networking libraries</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="libraries/netaddr/index.html">netaddr</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Exercises</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="exercises/exercises/index.html">Basic exercises</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="exercises/logpuzzle/index.html">Log puzzle</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Epilogue</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="feedback/index.html">Feedback & Credits</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Python Network programming</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Network Programming in Python &raquo;</li>
+        
+      
+    
+    <li>Course overview</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="workshop-overview">Workshop overview</h2>
+<ul>
+<li>This workshop explores network programming in the Python language.</li>
+<li>We&rsquo;ll explore networking concepts, protocols and translate these into practical network programming.</li>
+<li>We&rsquo;ll cover basic concepts, modules &amp; third-party libraries in Python to communicate over networks.</li>
+<li>We&rsquo;ll take a bottom-up approach i.e. starting from socket API up until using high level libraries like Requests.</li>
+<li>Difference between Python2.x &amp; Python3.x with regards to network code.</li>
+</ul>
+<h2 id="concepts-covered">Concepts covered</h2>
+<ul>
+<li>Scripts to communicate over HTTP, DNS, SSH, Telnet, FTP and SFTP.</li>
+<li>Writing simple web scrapers.</li>
+<li>Automating various system administration tasks.(Managing SSH sessions, Querying web services)</li>
+<li>Managing Network data and handling network errors.</li>
+</ul>
+<h2 id="skill-prerequisites">Skill prerequisites</h2>
+<ul>
+<li>Basics of Python programming. (strings, lists, dicts, functions, files etc)</li>
+<li>Knowledge of basic networking concepts. (Enough to know what an IP address, port number, OSI model etc.)</li>
+</ul>
+<h2 id="technical-prerequisites">Technical prerequisites</h2>
+<ul>
+<li>Laptop with administrator access (mandatory).</li>
+<li>Minimum 2 GB RAM and 15 GB free hard disk space (More the better).</li>
+<li>Preferably running Linux as primary OS but Windows/Mac is permissible.</li>
+<li>Preferably, your own Internet connectivity.</li>
+</ul>
+<h2 id="librariesmodules">Libraries/Modules</h2>
+<ul>
+<li>Standard library<ul>
+<li>urllib, urllib2, pexpect, telnetlib, ftplib, sys, os, getpass.</li>
+</ul>
+</li>
+<li>Third party modules<ul>
+<li>requests, paramiko, pxssh, netaddr, netifaces, dnspython</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="workshop_intro/license/index.html" class="btn btn-neutral float-right" title="License & Attributions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+        <span style="margin-left: 15px"><a href="workshop_intro/license/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-09-10 09:01:19.928875
+-->
