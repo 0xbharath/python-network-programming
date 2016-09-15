@@ -8,7 +8,7 @@
   
   <meta name="author" content="Bharath(yamakira_)">
   
-  <title>Basic exercises - Python Network programming</title>
+  <title>netifaces - Python Network programming</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Basic exercises";
-    var mkdocs_page_input_path = "exercises/exercises.md";
-    var mkdocs_page_url = "/exercises/exercises/index.html";
+    var mkdocs_page_name = "netifaces";
+    var mkdocs_page_input_path = "libraries/netifaces.md";
+    var mkdocs_page_url = "/libraries/netifaces/index.html";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -170,14 +170,25 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../libraries/netaddr/index.html">netaddr</a>
+        <a class="" href="../netaddr/index.html">netaddr</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../../libraries/netifaces/index.html">netifaces</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">netifaces</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#netifaces">netifaces</a></li>
+                
+                    <li><a class="toctree-l4" href="#installation">Installation</a></li>
+                
+                    <li><a class="toctree-l4" href="#basic-operations">Basic operations</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -191,28 +202,15 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="index.html">Basic exercises</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#google-public-dns-easter-egg">Google Public DNS - easter egg</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#dummy-network-scanner">Dummy network scanner</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#ssh-exercises">SSH exercises</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../exercises/exercises/index.html">Basic exercises</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../logpuzzle/index.html">Log puzzle</a>
+        <a class="" href="../../exercises/logpuzzle/index.html">Log puzzle</a>
         
     </li>
 
@@ -257,11 +255,11 @@
     
       
         
-          <li>Exercises &raquo;</li>
+          <li>Misc Networking libraries &raquo;</li>
         
       
     
-    <li>Basic exercises</li>
+    <li>netifaces</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -275,20 +273,84 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="google-public-dns-easter-egg">Google Public DNS - easter egg</h3>
-<ol>
-<li>There is an easter egg hidden in one of the DNS records of google&rsquo;s public DNS(8.8.8.8). <br/> Try and extract the DNS records pertaining to google public DNS and find the easter egg.<br>(It is not really tricky or a challenge, when you see it, you&rsquo;ll recognize it)</li>
-</ol>
-<p><strong>Hints</strong></p>
+                <h1 id="netifaces">netifaces</h1>
 <ul>
-<li>The easter egg is not in the records of the IP address 8.8.8.8. You&rsquo;ll have to extract the records for it&rsquo;s domain name.</li>
-<li>PTR record points to domain name for a given IP address.</li>
+<li><strong>A portable third-party library in Python to enumerate network interfaces on local machine.</strong></li>
+<li>Historically it has been difficult to straightforwardly get the network address(es) of the machine on which your Python scripts are running without compromising the portability of your script.<br/></li>
+<li>netifaces takes care of enumerating interfaces, network addresses and also preserves the portability(works on all *nix systems atleast).</li>
 </ul>
-<h3 id="dummy-network-scanner">Dummy network scanner</h3>
-<p>A client wants you to do a security audit on his networks. The system admin provided you the IP adress range of their networks for you to scan, he has also provided you a list of IP addresses that you should not scan.</p>
-<p>Write a script that takes an IP address range to scan and list of IP addresses to exclude from the scan as input(command line arguments)
-<br>The output of the script should be a final list of IP adresses(includes all the IP address from the range provided, excludes the IPs that client wanted to be excluded).</p>
-<h3 id="ssh-exercises">SSH exercises</h3>
+<h4 id="installation">Installation</h4>
+<ul>
+<li>netifaces needs python extension modules. In case you haven&rsquo;t already, you should install python-dev package.</li>
+</ul>
+<pre><code class="bash">verax@humla ~ $ sudo apt-get install python-dev
+</code></pre>
+
+<ul>
+<li>You can install netifaces using PIP.</li>
+</ul>
+<pre><code class="bash">verax@humla ~ $ pip install netifaces
+</code></pre>
+
+<h4 id="basic-operations">Basic operations</h4>
+<p>You can take a look at all the modules that are part of netifaces</p>
+<pre><code class="python">&gt;&gt;&gt; import netifaces
+&gt;&gt;&gt; 
+&gt;&gt;&gt; dir(netifaces)
+[ ... snipped ...
+'address_families', 'gateways', 'ifaddresses', 'interfaces', 'version']
+&gt;&gt;&gt; 
+
+</code></pre>
+
+<p>Getting a list of all the network interface identifiers on the machine.</p>
+<pre><code class="python">&gt;&gt;&gt; netifaces.interfaces()
+['lo', 'eth0', 'wlan0', 'eth3', 'vboxnet0']
+</code></pre>
+
+<p>You can ask for the addresses of a particular interface</p>
+<pre><code class="python">&gt;&gt;&gt; import netifaces
+&gt;&gt;&gt; from pprint import pprint
+&gt;&gt;&gt;
+&gt;&gt;&gt; pprint(netifaces.ifaddresses('eth3'))
+{2: [{'addr': '192.168.1.100',
+      'broadcast': '192.168.1.255',
+      'netmask': '255.255.255.0'}],
+ 10: [{'addr': 'fe80::364b:50ff:feb7:ef1d%eth3',
+       'netmask': 'ffff:ffff:ffff:ffff::/64'}],
+ 17: [{'addr': '34:4b:50:b7:ef:1d', 'broadcast': 'ff:ff:ff:ff:ff:ff'}]}
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">pprint</p>
+<ul>
+<li><strong>pprint</strong> contains a “pretty printer” for producing aesthetically pleasing representations of your data structures.<br/></li>
+<li>The formatter produces representations of data structures that can be parsed correctly by the interpreter, and are also easy for a human to read</li>
+</ul>
+</div>
+<p>You can also get list of all the gateways</p>
+<pre><code class="python">&gt;&gt;&gt; netifaces.gateways()
+{'default': {2: ('192.168.1.1', 'eth3')}, 2: [('192.168.1.1', 'eth3', True)]}
+</code></pre>
+
+<p>Getting list of IPv4 addresses excluding loopback and virtualbox adapters</p>
+<pre><code class="python">&gt;&gt;&gt; for iface in netifaces.interfaces():
+...     if iface == 'lo' or iface.startswith('vbox'):
+...         continue
+...     iface_details = netifaces.ifaddresses(iface)
+...     if iface_details.has_key(netifaces.AF_INET):
+...         print iface_details[netifaces.AF_INET]
+... 
+[{'broadcast': '192.168.1.255', 'netmask': '255.255.255.0', 'addr': '192.168.1.100'}]
+[{'broadcast': '192.168.1.255', 'netmask': '255.255.255.0', 'addr': '192.168.1.101'}]
+</code></pre>
+
+<div class="admonition important">
+<p class="admonition-title">Examples of netifaces usage in open source projects</p>
+<ul>
+<li>For more examples of netifaces usage in open source projects: <a href='http://www.programcreek.com/python/example/81895/netifaces.interfaces'>netifaces examples</a></li>
+</ul>
+</div>
               
             </div>
           </div>
@@ -296,10 +358,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../logpuzzle/index.html" class="btn btn-neutral float-right" title="Log puzzle">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../exercises/exercises/index.html" class="btn btn-neutral float-right" title="Basic exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../libraries/netifaces/index.html" class="btn btn-neutral" title="netifaces"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../netaddr/index.html" class="btn btn-neutral" title="netaddr"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -327,10 +389,10 @@
           <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../libraries/netifaces/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../netaddr/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../logpuzzle/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../exercises/exercises/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -5,31 +5,31 @@
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/workshop_intro/license/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/workshop_intro/bigger_picture/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/workshop_intro/speakers/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/workshop_intro/workshop_settings/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -38,8 +38,8 @@
     
         
     <url>
-     <loc>https://yamakira.github.io/python-network-programming/layers/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <loc>https://yamakira.github.io/python-network-programming/networking/layers/index.html</loc>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -48,8 +48,8 @@
     
         
     <url>
-     <loc>https://yamakira.github.io/python-network-programming/socket_interface/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <loc>https://yamakira.github.io/python-network-programming/sockets/socket_interface/index.html</loc>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -59,19 +59,25 @@
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/protocols/dns/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/protocols/telnet/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/protocols/ssh/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://yamakira.github.io/python-network-programming/protocols/ftp/index.html</loc>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -81,7 +87,13 @@
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/libraries/netaddr/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://yamakira.github.io/python-network-programming/libraries/netifaces/index.html</loc>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -91,13 +103,13 @@
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/exercises/exercises/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://yamakira.github.io/python-network-programming/exercises/logpuzzle/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -106,8 +118,8 @@
     
         
     <url>
-     <loc>https://yamakira.github.io/python-network-programming/feedback/index.html</loc>
-     <lastmod>2016-09-10</lastmod>
+     <loc>https://yamakira.github.io/python-network-programming/epilogue/feedback/index.html</loc>
+     <lastmod>2016-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

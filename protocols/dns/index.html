@@ -104,7 +104,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../layers/index.html">Layers</a>
+        <a class="" href="../../networking/layers/index.html">Layers</a>
         
     </li>
 
@@ -119,7 +119,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../socket_interface/index.html">Socket interface</a>
+        <a class="" href="../../sockets/socket_interface/index.html">Socket interface</a>
         
     </li>
 
@@ -168,6 +168,13 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ftp/index.html">FTP</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -179,6 +186,13 @@
             
     <li class="toctree-l1 ">
         <a class="" href="../../libraries/netaddr/index.html">netaddr</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../libraries/netifaces/index.html">netifaces</a>
         
     </li>
 
@@ -215,7 +229,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../feedback/index.html">Feedback & Credits</a>
+        <a class="" href="../../epilogue/feedback/index.html">Feedback & Credits</a>
         
     </li>
 
@@ -452,23 +466,15 @@ of what hostnames resolve to which IP addresses. </li>
 </code></pre>
 
 <h4 id="basic-dns-queries">Basic DNS queries</h4>
-<pre><code class="python">#!/usr/bin/env python
-# Basic DNS query
-
-import argparse, dns.resolver
-
-def lookup(name):
-    for qtype in 'A', 'AAAA', 'CNAME', 'MX', 'NS':
-        answer = dns.resolver.query(name, qtype, raise_on_no_answer=False)
-        if answer.rrset is not None:
-            print(answer.rrset)
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Resolve a name using DNS')
-    parser.add_argument('name', help='name that you want to look up in DNS')
-    lookup(parser.parse_args().name)
+<pre><code class="python">import dns.resolver
+name = 'iana.org'
+for qtype in 'A', 'AAAA', 'MX', 'NS', 'TXT', 'SOA':
+    answer = dns.resolver.query(name,qtype, raise_on_no_answer=False)
+    if answer.rrset is not None:
+        print(answer.rrset)
 </code></pre>
 
+<p>For more exhaustive explaination - <a href='http://stackoverflow.com/questions/13842116/how-do-we-get-txt-cname-and-soa-records-from-dnspython'>basic queries in dnspython - stackoverflow</a></p>
 <h4 id="zone-transfer">Zone transfer</h4>
 <pre><code class="python">import dns.query
 import dns.zone
@@ -480,10 +486,40 @@ for n in names:
     print z[n].to_text(n)
 </code></pre>
 
-<p><strong>EASTER EGG in google dns</strong></p>
-<p>How do we get TXT, CNAME and SOA records from dnspython? stackoverflow</p>
+<h4 id="reverse-dns-lookupptr-record">Reverse DNS lookup(PTR record)</h4>
+<p>Reverse DNS resolution (rDNS) is the determination of a domain name associated with an IP address via querying DNS (the reverse of the usual &ldquo;forward&rdquo; DNS lookup of an IP from a domain name.)</p>
+<ul>
+<li>Reverse DNS lookups for IPv4 addresses use the special domain in-addr.arpa. <br></li>
+<li>In this domain, an IPv4 address is represented as a concatenated sequence of four decimal numbers, separated by dots, to which is appended the second level domain suffix .in-addr.arpa.<br></li>
+<li>The four decimal numbers are obtained by splitting the 32-bit IPv4 address into four 8-bit portions and converting each 8-bit portion into a decimal number. <br></li>
+<li>These decimal numbers are then concatenated in the order: least significant 8-bit portion first (leftmost), most significant 8-bit portion last (rightmost). <br>
+<br/>
+<strong>Example: </strong> <br/>
+To do a reverse lookup of the IP address <strong>8.8.4.4</strong> the PTR record for the domain name <strong>4.4.8.8.in-addr.arpa</strong> would be looked up, and found to point to <strong>google-public-dns-b.google.com.</strong></li>
+</ul>
+<p>dnspython has class <strong>reversename</strong> with a bunch of methods to help you convert IP address into special domain address used to make a rDNS request and vice versa. <br>
+This code DOES NOT communicate over network or generate traffic. It&rsquo;s simply your OS doing the converstion locally.</p>
+<pre><code class="python">&gt;&gt;&gt; from dns import reversename
+&gt;&gt;&gt; domain_address = reversename.from_address('8.8.4.4')
+&gt;&gt;&gt; 
+&gt;&gt;&gt; print domain_address
+4.4.8.8.in-addr.arpa.
+&gt;&gt;&gt; 
+&gt;&gt;&gt; ip_address = reversename.to_address(domain_address)
+&gt;&gt;&gt; print ip_address
+8.8.4.4
+</code></pre>
+
+<p>Once you have the special domain address, you can use it to extract PTR record.</p>
+<pre><code class="python">&gt;&gt;&gt; from dns import resolver
+&gt;&gt;&gt;
+&gt;&gt;&gt; domain_name = str(resolver.query(domain_address,&quot;PTR&quot;)[0])
+&gt;&gt;&gt; print domain_name
+google-public-dns-b.google.com.
+</code></pre>
+
 <footer>
- <small>© Copyright, all the DNS query illustrations on this page are made by and belong to Steve Friedl of Unixwiz.net</small>
+ <small>© Copyright, all the DNS query illustrations on this page are reproduced work created by Steve Friedl of Unixwiz.net</small>
 </footer>
               
             </div>
@@ -495,7 +531,7 @@ for n in names:
         <a href="../telnet/index.html" class="btn btn-neutral float-right" title="Telnet">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../socket_interface/index.html" class="btn btn-neutral" title="Socket interface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../sockets/socket_interface/index.html" class="btn btn-neutral" title="Socket interface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -523,7 +559,7 @@ for n in names:
           <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../socket_interface/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../sockets/socket_interface/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../telnet/index.html" style="color: #fcfcfc">Next &raquo;</a></span>

@@ -104,7 +104,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../layers/index.html">Layers</a>
+        <a class="" href="../../networking/layers/index.html">Layers</a>
         
     </li>
 
@@ -119,7 +119,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../socket_interface/index.html">Socket interface</a>
+        <a class="" href="../../sockets/socket_interface/index.html">Socket interface</a>
         
     </li>
 
@@ -147,7 +147,7 @@
             
                 <li class="toctree-l3"><a href="#telnet">Telnet</a></li>
                 
-                    <li><a class="toctree-l4" href="#what-is-telnet">What is telnet?</a></li>
+                    <li><a class="toctree-l4" href="#telnet-overview">Telnet overview</a></li>
                 
                     <li><a class="toctree-l4" href="#scripting-telnet">Scripting Telnet</a></li>
                 
@@ -164,6 +164,13 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ftp/index.html">FTP</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -175,6 +182,13 @@
             
     <li class="toctree-l1 ">
         <a class="" href="../../libraries/netaddr/index.html">netaddr</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../libraries/netifaces/index.html">netifaces</a>
         
     </li>
 
@@ -211,7 +225,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../feedback/index.html">Feedback & Credits</a>
+        <a class="" href="../../epilogue/feedback/index.html">Feedback & Credits</a>
         
     </li>
 
@@ -296,7 +310,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="what-is-telnet">What is telnet?</h2>
+<h2 id="telnet-overview">Telnet overview</h2>
 <p>&ldquo;Telnet is an application layer protocol used on the Internet or local area networks to provide a bidirectional interactive text-oriented communication facility using a virtual terminal connection.&rdquo;</p>
 <h4 id="why-not-to-use-telnet">Why NOT to use telnet?</h4>
 <ul>
@@ -312,7 +326,7 @@
 <li>Telnet is still a popular way to access remote shell in many embedded(IoT) devices.</li>
 </ul>
 <div class="admonition important">
-<p>A study on state of telnet in embedded systems - <a href='https://en.blog.nic.cz/2016/09/01/telnet-is-not-dead-at-least-not-on-smart-devices/'>Telnet is not dead </a><br></p>
+<p>A study on state of telnet in embedded systems (2016) - <a href='https://en.blog.nic.cz/2016/09/01/telnet-is-not-dead-at-least-not-on-smart-devices/'>Telnet is not dead </a><br></p>
 </div>
 <h2 id="scripting-telnet">Scripting Telnet</h2>
 <ul>
@@ -323,6 +337,11 @@
 <h3 id="expect">expect</h3>
 <p>[explain expect]
 [one sample]</p>
+<p><strong>Expect is a tool for automating interactive applications such as telnet, ftp, passwd, fsck, ssh, etc.</strong></p>
+<ul>
+<li>Expect allows you to turn a normally interactive-only process in to a completely non-interactive, automated task.</li>
+</ul>
+<p>For more on expect utility: &ldquo;Exploring Expect&rdquo; by O&rsquo;Reilly</p>
 <h3 id="pexpect">pexpect</h3>
 <ul>
 <li>pexpect is pure Python implementation of expect.</li>
@@ -330,6 +349,11 @@
 </ul>
 <p>[pexpect docs link]
 [pexpect telnet script]</p>
+<h4 id="when-not-to-use-expectpexpect">When not to use expect(pexpect)?</h4>
+<ul>
+<li>Expect(or pexpect) is an amazing tool, but can be complicated to use and very fragile.</li>
+<li>The basic premise of expect is to set it up to look for certain strings of text (&ldquo;expect&rdquo; them), and when it sees certain text, respond in a certain way. Eeven a slight change in the expected string(mostly it&rsquo;s case sensitive) will break the script.</li>
+</ul>
 <h3 id="telnetlib">telnetlib</h3>
 <ul>
 <li>telnetlib is similar to <em>pexpect</em> but crafted for automating Telnet protocol.</li>

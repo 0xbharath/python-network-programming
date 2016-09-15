@@ -8,7 +8,7 @@
   
   <meta name="author" content="Bharath(yamakira_)">
   
-  <title>Basic exercises - Python Network programming</title>
+  <title>FTP - Python Network programming</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Basic exercises";
-    var mkdocs_page_input_path = "exercises/exercises.md";
-    var mkdocs_page_url = "/exercises/exercises/index.html";
+    var mkdocs_page_name = "FTP";
+    var mkdocs_page_input_path = "protocols/ftp.md";
+    var mkdocs_page_url = "/protocols/ftp/index.html";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -134,28 +134,41 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../protocols/dns/index.html">DNS</a>
+        <a class="" href="../dns/index.html">DNS</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../protocols/telnet/index.html">Telnet</a>
+        <a class="" href="../telnet/index.html">Telnet</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../protocols/ssh/index.html">SSH</a>
+        <a class="" href="../ssh/index.html">SSH</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../../protocols/ftp/index.html">FTP</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">FTP</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#file-transfer-protocol-ftp">File Transfer Protocol (FTP)</a></li>
+                
+                    <li><a class="toctree-l4" href="#ftp-overview">FTP overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#ftp-connection-details">FTP Connection details</a></li>
+                
+                    <li><a class="toctree-l4" href="#scripting-ftp-in-python">Scripting FTP in Python</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -191,28 +204,15 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="index.html">Basic exercises</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#google-public-dns-easter-egg">Google Public DNS - easter egg</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#dummy-network-scanner">Dummy network scanner</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#ssh-exercises">SSH exercises</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../exercises/exercises/index.html">Basic exercises</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../logpuzzle/index.html">Log puzzle</a>
+        <a class="" href="../../exercises/logpuzzle/index.html">Log puzzle</a>
         
     </li>
 
@@ -257,11 +257,11 @@
     
       
         
-          <li>Exercises &raquo;</li>
+          <li>Protocols &raquo;</li>
         
       
     
-    <li>Basic exercises</li>
+    <li>FTP</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -275,20 +275,83 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="google-public-dns-easter-egg">Google Public DNS - easter egg</h3>
-<ol>
-<li>There is an easter egg hidden in one of the DNS records of google&rsquo;s public DNS(8.8.8.8). <br/> Try and extract the DNS records pertaining to google public DNS and find the easter egg.<br>(It is not really tricky or a challenge, when you see it, you&rsquo;ll recognize it)</li>
-</ol>
-<p><strong>Hints</strong></p>
+                <h1 id="file-transfer-protocol-ftp">File Transfer Protocol (FTP)</h1>
+<hr />
+<table>
+<thead>
+<tr>
+<th>FTP Protocol</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Transfer files between hosts</td>
+</tr>
+<tr>
+<td><strong>Standard</strong></td>
+<td>RFC 959</td>
+</tr>
+<tr>
+<td><strong>Runs atop</strong></td>
+<td>TCP/IP</td>
+</tr>
+<tr>
+<td><strong>Port number</strong></td>
+<td>20(data), 21(control)</td>
+</tr>
+<tr>
+<td><strong>Libraries</strong></td>
+<td><strong>ftplib</strong>, urllib2, pexpect</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ftp-overview">FTP overview</h2>
 <ul>
-<li>The easter egg is not in the records of the IP address 8.8.8.8. You&rsquo;ll have to extract the records for it&rsquo;s domain name.</li>
-<li>PTR record points to domain name for a given IP address.</li>
+<li>FTP was once among the most widely used protocols on the Internet</li>
+<li>FTP service allows users to transfer files between hosts in a TCP-based network.</li>
+<li>Typically, users authenticate to FTP servers using a combination of a username and password.</li>
+<li>However, some sites provide the ability to authenticate anonymously. In this scenario, a user enters the username “anonymous” and submits an email address in lieu of a password.</li>
 </ul>
-<h3 id="dummy-network-scanner">Dummy network scanner</h3>
-<p>A client wants you to do a security audit on his networks. The system admin provided you the IP adress range of their networks for you to scan, he has also provided you a list of IP addresses that you should not scan.</p>
-<p>Write a script that takes an IP address range to scan and list of IP addresses to exclude from the scan as input(command line arguments)
-<br>The output of the script should be a final list of IP adresses(includes all the IP address from the range provided, excludes the IPs that client wanted to be excluded).</p>
-<h3 id="ssh-exercises">SSH exercises</h3>
+<h3 id="why-not-to-use-ftp">Why NOT to use FTP?</h3>
+<ul>
+<li>FTP is an insecure protocol. files, usernames and passwords are sent completely in the clear.</li>
+<li>FTP clients make a connection, users choose a working directory, and do several operations all over the same network connection. This will have overhead on the server to remember things like a current working directory.</li>
+<li>FTP sync-ing is inefficient. All the files are copied over again even though they are not new or not changed</li>
+</ul>
+<h3 id="what-to-use-instead">What to use instead?</h3>
+<ul>
+<li>For file download, HTTP has become the standard protocol on today’s Internet.</li>
+<li>Use ssl supported protocols for secured connection.(ftps or https)</li>
+<li>For sync-ing files between hosts, <em>rsync</em> or <em>rdist</em> are more effective. They copy only files that are new or changed.</li>
+<li>SFTP is a secure alternative for trasfering files(over SSH). It&rsquo;s especially useful in cases where user needs full file-system access.</li>
+</ul>
+<h2 id="ftp-connection-details">FTP Connection details</h2>
+<h4 id="communication-channels">Communication Channels</h4>
+<ul>
+<li>FTP is unusual because, by default, it actually uses <strong>two TCP connections</strong> during operation.</li>
+<li><strong>One connection is the control channel(usually port 21)</strong>, which carries commands and the resulting acknowledgments or error codes.</li>
+<li><strong>Second connection is the data channel(usually port 20)</strong>, which is used for transmitting files or other blocks of information. the data channel is fully duplex, meaning that it allows files to be transmitted in both directions simultaneously.</li>
+</ul>
+<h4 id="connection-process">Connection process</h4>
+<ul>
+<li>FTP client establishes a command connection by connecting to the FTP port on the server.</li>
+<li>The client authenticates itself, usually with username and password.</li>
+<li>The client changes directory on the server to where it wants to deposit or retrieve files.</li>
+<li>The client begins listening on a new port for the data connection, and then it informs the server about that port.</li>
+<li>The server connects to the port that the client has opened.</li>
+<li>The file is transmitted.</li>
+<li>The data connection is closed.</li>
+</ul>
+<p>Client opening a port for server to connect worked well in nearly days but with usage of firewalls, NAT etc it has become more complicated. <br>
+FTP has a mode called <strong>&lsquo;passive mode&rsquo;</strong> in which the server opens an extra port for client to connect to, then the data transmission ensues. Passive mode is default in most FTP implementations these days(including ftplib in Python).  </p>
+<h2 id="scripting-ftp-in-python">Scripting FTP in Python</h2>
+<ul>
+<li>Python standard library module <strong>&lsquo;ftplib&rsquo;</strong> is used to script FTP in Python.</li>
+<li>ftplib not only handles the details of establishing connections but also provides convenient ways to automate common commands.</li>
+</ul>
               
             </div>
           </div>
@@ -296,10 +359,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../logpuzzle/index.html" class="btn btn-neutral float-right" title="Log puzzle">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../libraries/netaddr/index.html" class="btn btn-neutral float-right" title="netaddr">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../libraries/netifaces/index.html" class="btn btn-neutral" title="netifaces"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ssh/index.html" class="btn btn-neutral" title="SSH"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -327,10 +390,10 @@
           <a href="https://github.com/yamakira/python-network-programming" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../libraries/netifaces/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../ssh/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../logpuzzle/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../libraries/netaddr/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
