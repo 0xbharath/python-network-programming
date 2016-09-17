@@ -312,6 +312,7 @@
 <hr />
 <h2 id="telnet-overview">Telnet overview</h2>
 <p>&ldquo;Telnet is an application layer protocol used on the Internet or local area networks to provide a bidirectional interactive text-oriented communication facility using a virtual terminal connection.&rdquo;</p>
+<p>For more perspective on command-line &amp; interactive protocols: www.cryptonomicon.com/beginning.html</p>
 <h4 id="why-not-to-use-telnet">Why NOT to use telnet?</h4>
 <ul>
 <li>Telnet is a <strong>terribly insecure protocol</strong>. It&rsquo;s a plain-text protocol, anyone watching your Telnet packets on the wire will see your username, password, and everything you do on the remote system.</li>
@@ -335,20 +336,61 @@
 <li>Scripting Telnet is like playing a purely textual game. You recieve some text and based on it you reply with something intelligible to the server.</li>
 </ul>
 <h3 id="expect">expect</h3>
-<p>[explain expect]
-[one sample]</p>
 <p><strong>Expect is a tool for automating interactive applications such as telnet, ftp, passwd, fsck, ssh, etc.</strong></p>
 <ul>
 <li>Expect allows you to turn a normally interactive-only process in to a completely non-interactive, automated task.</li>
 </ul>
+<p>Expect expect commands used to automate any interactive process are:</p>
+<ul>
+<li>spawn – to start the command</li>
+<li>expect – wait for the specific string from the process</li>
+<li>send – to send the strings to the process</li>
+</ul>
+<pre><code class="bash"># Assume $remote_server, $my_user_id, $my_password, and $my_command were read in earlier
+# in the script.
+# Open a telnet session to a remote server, and wait for a username prompt.
+spawn telnet $remote_server
+expect &quot;username:&quot;
+# Send the username, and then wait for a password prompt.
+send &quot;$my_user_id\r&quot;
+expect &quot;password:&quot;
+# Send the password, and then wait for a shell prompt.
+send &quot;$my_password\r&quot;
+expect &quot;%&quot;
+# Send the prebuilt command, and then wait for another shell prompt.
+send &quot;$my_command\r&quot;
+expect &quot;%&quot;
+# Capture the results of the command into a variable. This can be displayed, or written to disk.
+set results $expect_out(buffer)
+# Exit the telnet session, and wait for a special end-of-file character.
+send &quot;exit\r&quot;
+expect eof
+</code></pre>
+
 <p>For more on expect utility: &ldquo;Exploring Expect&rdquo; by O&rsquo;Reilly</p>
 <h3 id="pexpect">pexpect</h3>
 <ul>
 <li>pexpect is pure Python implementation of expect.</li>
 <li>Like expect pexpect is technically not a network aware program, but it can be used to automate interactive programs like Telnet and SSH.</li>
 </ul>
-<p>[pexpect docs link]
-[pexpect telnet script]</p>
+<pre><code class="python"># Script that connects to a telnet server and run a command.
+
+import pexpect
+child = pexpect.spawn('ftp ftp.openbsd.org')
+child.expect('Name .*: ')
+child.sendline('anonymous')
+child.expect('Password:')
+child.sendline('noah@example.com')
+child.expect('ftp&gt; ')
+child.sendline('lcd /tmp')
+child.expect('ftp&gt; ')
+child.sendline('cd pub/OpenBSD')
+child.expect('ftp&gt; ')
+child.sendline('get README')
+child.expect('ftp&gt; ')
+child.sendline('bye')
+</code></pre>
+
 <h4 id="when-not-to-use-expectpexpect">When not to use expect(pexpect)?</h4>
 <ul>
 <li>Expect(or pexpect) is an amazing tool, but can be complicated to use and very fragile.</li>
@@ -358,6 +400,68 @@
 <ul>
 <li>telnetlib is similar to <em>pexpect</em> but crafted for automating Telnet protocol.</li>
 <li>telnetlib not only has basic methods for sending and receiving data but also a few routines that will watch and wait for a particular string to arrive from the remote system.</li>
+</ul>
+<pre><code class="python">import sys, getpass, telnetlib
+
+def telnet_connect(hostname, username, password):
+    t = telnetlib.Telnet(hostname)            # actively connects to a telnet server
+    # t.set_debuglevel(1)                     # uncomment to get debug messages
+    t.read_until(b'login:', 10)               # waits until it recieves a string 'login:'
+    t.write(username.encode('utf-8'))         # sends username to the server
+    t.write(b'\r')                            # sends return character to the server
+    t.read_until(b'Password:', 10)            # waits until it recieves a string 'Password:'
+    t.write(password.encode('utf-8'))         # sends password to the server
+    t.write(b'\r')                            # sends return character to the server
+    n, match, previous_text = t.expect([br'Login incorrect', br'\$'], 10)
+    if n == 0:
+        print('Username and password failed - giving up')
+    else:
+        t.write(b'exec ps aux\r')             # sends a command to the server
+        t.write(b'exec exit\r')
+        print(t.read_all().decode('utf-8'))  # read until socket closes
+    t.close()
+
+if __name__ == '__main__':
+    if len(sys.argv) &lt; 2: 
+        print &quot;Usage: python telnet_login.py hostname username&quot;
+    hostname = sys.argv[1]
+    username = sys.argv[2]
+    password = getpass.getpass('Password: ')
+    telnet_connect(hostname, username, password)
+</code></pre>
+
+<h4 id="telnetlib-objects">telnetlib objects</h4>
+<p><strong>Telnet.interact()</strong></p>
+<ul>
+<li>Interaction function, emulates a very dumb Telnet client.</li>
+</ul>
+<p><strong>Telnet.expect(list[, timeout])</strong></p>
+<ul>
+<li>Read until one from a list of a <strong>regular expressions</strong> matches.</li>
+</ul>
+<p><strong> Telnet.read_until(expected[, timeout]) </strong></p>
+<ul>
+<li>Read until a given string, expected, is encountered or until timeout seconds have passed.</li>
+</ul>
+<p><strong>Telnet.read_all()</strong></p>
+<ul>
+<li>Read all data until EOF; block until connection closed.</li>
+</ul>
+<p><strong>Telnet.read_very_eager()</strong></p>
+<ul>
+<li>Read everything that can be without blocking in I/O (eager).</li>
+</ul>
+<p>Telnet.read_eager()</p>
+<ul>
+<li>Read readily available data.</li>
+</ul>
+<p><strong>Telnet.set_debuglevel(debuglevel)</strong></p>
+<ul>
+<li>Set the debug level. The higher the value of debuglevel, the more debug output you get (on sys.stdout).</li>
+</ul>
+<p><strong>Telnet.close()</strong></p>
+<ul>
+<li>Close the connection.</li>
 </ul>
               
             </div>

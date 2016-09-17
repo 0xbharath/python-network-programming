@@ -158,6 +158,8 @@
                 
                     <li><a class="toctree-l4" href="#ssh-connection">SSH connection</a></li>
                 
+                    <li><a class="toctree-l4" href="#paramiko">paramiko</a></li>
+                
             
             </ul>
         
@@ -315,11 +317,9 @@
 <li>SSH preserved all the great features of the early remote-shell protocol added wit hsecurity, encryption and efficient multiplexing.</li>
 </ul>
 <h3 id="multiplexing">Multiplexing</h3>
-<p>[what is protocol multiplexing]</p>
-<p>For example, UDP and TCP use the concept of port numbers, let&rsquo;s several different applications run on a machine over single IP. IP protocol has no clue about the many applications running at transport layer.</p>
-<p>A lot of high level protocols tend to ignore the concept of multiplexing. For example, it is not possible to multiplex using the most popular application layer protocol, HTTP 1.1.</p>
+<p>UDP and TCP use the concept of port numbers, let&rsquo;s several different applications run on a machine over single IP. IP protocol has no clue about the different applications running at transport layer.</p>
 <p>SSH is a sophisticated protocol that implements its own multiplexing. SSH has a notion of &lsquo;channels&rsquo;, mutliple channels can run on same SSH socket. Every block of information SSH sends across its socket is labeled with a “channel” identifier so that several conversations can share the socket.</p>
-<p>Multiplexing make sense because the real expense of an SSH connection is setting it up. It&rsquo;s takes a few second of real time to setup an SSH connection. So using an SSH connection for as many operations justifies the high intitial expense of setting it up.</p>
+<p>Multiplexing makes sense because the real expense of an SSH connection is setting it up. It&rsquo;s takes a few second of real time to setup an SSH connection. So using an SSH connection for as many operations justifies the high intitial expense of setting it up.</p>
 <p>Once connected on SSH, you can create several kinds of channels: <br/></p>
 <ul>
 <li>An interactive shell session, like that supported by Telnet.</li>
@@ -352,6 +352,84 @@
 </ul>
 </li>
 </ul>
+<p>When you encounter new unfamiliar host, you&rsquo;ll get a message stating authenticity of the host cannot be established and it&rsquo;s left to the user to decide. </p>
+<p><img alt="ssh unknown keys" src="../../img/ssh_fail.png" /></p>
+<p><img alt="ssh unknown keys" src="../../img/ssh_sucess.png" /></p>
+<h2 id="paramiko">paramiko</h2>
+<ul>
+<li>SSH can be automated by various libraries in Python such as pexpect, pxssh(extra classes/methods around pexpect to deal with SSH), paramiko, fabric etc. </li>
+<li>paramiko is a Python third party library that has extensive support for normal SSH operations and it is very trivial to use.</li>
+<li>paramiko is  has been ported to java, and is called jaramiko.</li>
+</ul>
+<h3 id="paramiko-host-key-operations">paramiko - host key operations</h3>
+<ul>
+<li>paramiko, by default, doesn&rsquo;t load any host key files, so it mandatorily raises an exception for the first host to which you connect because it will not be able to verify its key.</li>
+</ul>
+<pre><code class="python">&gt;&gt;&gt; import paramiko
+&gt;&gt;&gt; client = paramiko.SSHClient()
+&gt;&gt;&gt; client.connect('example.com', username='tester')
+Traceback (most recent call last):
+...
+paramiko.ssh_exception.SSHException: Server 'example.com' not found in known_hosts
+</code></pre>
+
+<ul>
+<li>You can load system and the current user’s known host keys before making connection so that paramiko is aware of them.</li>
+</ul>
+<pre><code class="python">client.load_system_host_keys()
+client.load_host_keys('/home/brandon/.ssh/known_hosts')
+client.connect('example.com', username='test')
+</code></pre>
+
+<ul>
+<li>
+<p>paramiko library also lets you choose how you handle unknown hosts.</p>
+</li>
+<li>
+<p>Inside paramiko there are also several decision-making classes that already implement several basic host key options. <br>
+            • <strong>paramiko.AutoAddPolicy</strong>: Host keys are automatically added to your user host key store (the file ~/.ssh/known_hosts on Unix systems) when first encountered, but any change in the host key from then on will raise a fatal exception. <br>
+            •    <strong>paramiko.RejectPolicy</strong>: Connecting to hosts with unknown keys simply raises an exception. <br>
+            •    <strong>paramiko.WarningPolicy</strong>: An unknown host causes a warning to be logged, but the connection is allowed to proceed. <br></p>
+</li>
+</ul>
+<h3 id="ssh-authentication">SSH Authentication</h3>
+<p>• You can provide a username and password. <br>
+• You can provide a username and then have your client successfully perform a public-key challenge-response. This clever operation manages to prove that you are in possession of a secret “identity” key without actually exposing its contents to the remote system. <br></p>
+<ul>
+<li>password authentication</li>
+</ul>
+<pre><code class="python">&gt;&gt;&gt; client.connect('example.com', username='brandon', password=mypass)
+</code></pre>
+
+<ul>
+<li>Public-key authentication where you use ssh-keygen to create an “identity” key pair (which is typically stored in your ~/.ssh directory) that can be used to authenticate you without a password makes the Python code even easier!</li>
+</ul>
+<pre><code class="python">&gt;&gt;&gt; client.connect('my.example.com')
+</code></pre>
+
+<p>If your identity key file is stored somewhere other than in the normal ~/.ssh/id_rsa file.</p>
+<pre><code class="python">&gt;&gt;&gt; client.connect('my.example.com', key_filename='/home/brandon/.ssh/id_sysadmin')
+</code></pre>
+
+<h4 id="running-commands">Running commands</h4>
+<pre><code class="python">import paramiko, sys, getpass
+
+hostname = sys.argv[1]
+username = sys.argv[2]
+password = getpass.getpass()
+
+
+client = paramiko.SSHClient()
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
+client.connect(hostname, username=username, password=password)
+    for command in 'echo &quot;Hello, world!&quot;', 'uname', 'uptime':
+        stdin, stdout, stderr = client.exec_command(command)
+        stdin.close()
+        print(repr(stdout.read()))
+        stdout.close()
+        stderr.close()
+client.close
+</code></pre>
               
             </div>
           </div>
