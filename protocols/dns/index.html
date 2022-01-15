@@ -411,7 +411,7 @@ of what hostnames resolve to which IP addresses. </li>
 <hr />
 <h4 id="step-ii">Step II</h4>
 <ul>
-<li>Your recursive server checks it&rsquo;s cache, if it doesn&rsquo;t find the record then the recursive server makes a request on your behalf to any one of the 13 root servers.</li>
+<li>Your recursive server checks its cache, if it doesn&rsquo;t find the record then the recursive server makes a request on your behalf to any one of the 13 root servers.</li>
 </ul>
 <p align="center">
 <img align="center" src="../../img/dns_root_servers.png" alt="list of root servers">
@@ -419,7 +419,7 @@ of what hostnames resolve to which IP addresses. </li>
 
 <hr />
 <h4 id="step-iii">Step III</h4>
-<p>The root server doesn&rsquo;t know the answer to your request, but it sends a referral to youe revursive name server with a list of the Global Top Level Domain (GTLD) servers responsible for the a domain(.com, .net, .org etc). This is in the form of NS records of servers more qualified to answer our query.</p>
+<p>The root server doesn&rsquo;t know the answer to your request, but it sends a referral to a recursive name server with a list of the Global Top Level Domain (GTLD) servers responsible for the a domain(.com, .net, .org etc). This is in the form of NS records of servers more qualified to answer our query.</p>
 <p align="center">
 <img align="center" src="../../img/dns_resolution_2.png" alt="dns resolution - root servers">
 </p>
